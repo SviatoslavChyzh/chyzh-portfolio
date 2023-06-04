@@ -20,5 +20,6 @@ module.exports = {
     'no-mixed-operators': 'error',
     'no-tabs': ['error', { allowIndentationTabs: true }],
     'react/react-in-jsx-scope': 'off',
+    'turbo/no-undeclared-env-vars': 'off',
   },
 };
