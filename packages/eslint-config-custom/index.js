@@ -21,5 +21,7 @@ module.exports = {
     'no-tabs': ['error', { allowIndentationTabs: true }],
     'react/react-in-jsx-scope': 'off',
     'turbo/no-undeclared-env-vars': 'off',
+    '@typescript-eslint/no-unnecessary-type-arguments': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
   },
 };

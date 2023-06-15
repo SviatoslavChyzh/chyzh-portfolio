@@ -1,17 +1,17 @@
-import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
+import 'dotenv/config';
+import express, { Application } from 'express';
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+import { config } from './config/config.js';
 
-dotenv.config();
+const PORT = config.port;
+const JWT_SECRET = config.jwtSecret;
 
-const app: Express = express();
-const port = process.env.PORT || 3333;
+const app: Application = express();
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
+app.get('/', (req, res) => {
+  res.send({ message: 'Hello World!1123' });
 });
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`🚀  Server ready at http://localhost:${PORT}`);
 });
