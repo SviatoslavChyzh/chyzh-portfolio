@@ -5,8 +5,9 @@ import swaggerUi from 'swagger-ui-express';
 import { config } from './config/config';
 import AuthRouter from './routes/auth.router';
 import { errorHandler, notFound } from './middleware/error.middleware';
+import * as process from 'process';
 
-const PORT = config.port;
+const PORT = process.env.PORT || 3333; //config.port;
 const JWT_SECRET = config.jwtSecret;
 
 const app: Application = express();
