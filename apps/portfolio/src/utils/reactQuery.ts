@@ -1,5 +1,5 @@
-import { QueryFunctionContext, useQuery, UseQueryOptions } from 'react-query';
 import { api } from './api';
+import { QueryFunctionContext, useQuery, UseQueryOptions } from '@tanstack/react-query';
 
 type QueryKeyT = [string, object | undefined] | any;
 
