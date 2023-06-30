@@ -1,4 +1,5 @@
 {
   "extends": "tsconfig/vite.json",
   "include": ["src, vite.config.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["tailwind.config.js", "postcss.config.js"]
 }
