@@ -37,7 +37,7 @@
     /* Import Aliases */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./app/*"],
     },
   },
   "ignore": ["node_modules", "dist", "**/*.config.ts", "**/*.test.ts", "**/*.test.tsx"]
