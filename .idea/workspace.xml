@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1f24d19-b859-41ee-b07a-970048c7b8d5" name="Changes" comment="updated index.html" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SviatoslavChyzh"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SviatoslavChyzh/chyzh-portfolio.git",
+    "accountId": "84b77413-1c7b-4c25-95b7-14f8b20baa8f"
+  }
+}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2P9MqBr1GKHMdrT0zQZwZEuz1dJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "remix",
+    "javascript.nodejs.core.library.configured.version": "23.1.0",
+    "javascript.nodejs.core.library.typings.version": "22.8.1",
+    "last_opened_file_path": "/Users/Sviatoslav.Chyzh/Documents/Slavik/projects/chyzh-portfolio/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettier.import.notification.dismissed": "true",
+    "prettierjs.PrettierConfiguration.Package": "/Users/Sviatoslav.Chyzh/Documents/Slavik/projects/chyzh-portfolio/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "settings.editor.splitter.proportion": "0.14527027",
+    "ts.external.directory.path": "/Users/Sviatoslav.Chyzh/Documents/Slavik/projects/chyzh-portfolio/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="Push.Settings">
+    <force-push-targets>
+      <force-push-target remote-path="origin" branch="tanstack-start" />
+    </force-push-targets>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/app/components/ui" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/features/sidebar/components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/app/features/sidebar/images" />
+      <recent name="$PROJECT_DIR$/app/features/sidebar/avatar" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.api">
+    <configuration name="api" type="NodeJSConfigurationType" working-dir="$PROJECT_DIR$/apps/api">
+      <method v="2" />
+    </configuration>
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/apps/portfolio/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.lint" />
+        <item itemvalue="npm.lint" />
+        <item itemvalue="npm.lint" />
+        <item itemvalue="npm.lint" />
+        <item itemvalue="npm.lint" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1f24d19-b859-41ee-b07a-970048c7b8d5" name="Changes" comment="" />
+      <created>1682865032253</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682865032253</updated>
+      <workItem from="1682865033799" duration="3757000" />
+      <workItem from="1682868834629" duration="3990000" />
+      <workItem from="1682886750745" duration="9358000" />
+      <workItem from="1683292626690" duration="1494000" />
+      <workItem from="1683532438728" duration="9269000" />
+      <workItem from="1684156216593" duration="90000" />
+      <workItem from="1684156349343" duration="1268000" />
+      <workItem from="1684157736140" duration="1263000" />
+      <workItem from="1684305332278" duration="4628000" />
+      <workItem from="1684332970596" duration="3021000" />
+      <workItem from="1684509247323" duration="5531000" />
+      <workItem from="1685370208289" duration="1126000" />
+      <workItem from="1685371540166" duration="538000" />
+      <workItem from="1685372086123" duration="6777000" />
+      <workItem from="1685567404698" duration="6961000" />
+      <workItem from="1685626693146" duration="949000" />
+      <workItem from="1685627719036" duration="249000" />
+      <workItem from="1685628095459" duration="598000" />
+      <workItem from="1685653517916" duration="1796000" />
+      <workItem from="1685808426881" duration="19603000" />
+      <workItem from="1686661541075" duration="276000" />
+      <workItem from="1686661825042" duration="20018000" />
+      <workItem from="1686865611523" duration="115000" />
+      <workItem from="1686865736290" duration="24564000" />
+      <workItem from="1686930272166" duration="2054000" />
+      <workItem from="1687760725769" duration="1645000" />
+      <workItem from="1687770830424" duration="24360000" />
+      <workItem from="1687950962166" duration="24000" />
+      <workItem from="1687950994275" duration="12000" />
+      <workItem from="1687951012934" duration="28000" />
+      <workItem from="1687951047739" duration="30979000" />
+      <workItem from="1688639287402" duration="1901000" />
+      <workItem from="1688712789053" duration="5000" />
+      <workItem from="1688712801799" duration="15000" />
+      <workItem from="1688712824489" duration="30000" />
+      <workItem from="1688712862593" duration="130000" />
+      <workItem from="1688712999850" duration="25000" />
+      <workItem from="1688713032653" duration="10208000" />
+      <workItem from="1688739086299" duration="2814000" />
+      <workItem from="1688825183543" duration="18288000" />
+      <workItem from="1690267851127" duration="598000" />
+      <workItem from="1690284127137" duration="8184000" />
+      <workItem from="1690524269406" duration="186000" />
+      <workItem from="1690524462168" duration="7869000" />
+      <workItem from="1690554476727" duration="10000" />
+      <workItem from="1730041562649" duration="40913000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1682886840241</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682886840241</updated>
+    </task>
+    <task id="LOCAL-00002" summary="turbo repo initial commit">
+      <created>1683293994225</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683293994225</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Configured eslint">
+      <created>1685370249612</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685370249612</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Configured prettier">
+      <created>1685567859337</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685567859337</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Created empty backend application">
+      <created>1685573042963</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685573042963</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Configured api project to work with ts and .env file">
+      <created>1685891404992</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685891404992</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Configured api project to work nodemon and prisma setup">
+      <created>1686865062051</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686865062051</updated>
+    </task>
+    <task id="LOCAL-00008" summary="gitignore update">
+      <created>1686865122516</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686865122516</updated>
+    </task>
+    <task id="LOCAL-00009" summary="gitignore update">
+      <created>1686865721120</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686865721120</updated>
+    </task>
+    <task id="LOCAL-00010" summary="gitignore update">
+      <created>1686865804999</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686865804999</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Prisma connection">
+      <created>1686925234595</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686925234595</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fixed build of ui app">
+      <created>1686926267483</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686926267483</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Moved files to src/ folder">
+      <created>1686928133373</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1686928133373</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Created portfolio CSS page">
+      <option name="closed" value="true" />
+      <created>1688128330596</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688128330596</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Created portfolio CSS page">
+      <option name="closed" value="true" />
+      <created>1688128558204</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1688128558204</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed import issues">
+      <option name="closed" value="true" />
+      <created>1688128679605</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1688128679605</updated>
+    </task>
+    <task id="LOCAL-00017" summary="tanstack start">
+      <option name="closed" value="true" />
+      <created>1730114294159</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730114294159</updated>
+    </task>
+    <task id="LOCAL-00018" summary="vercel hosting">
+      <option name="closed" value="true" />
+      <created>1730115071926</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1730115071926</updated>
+    </task>
+    <task id="LOCAL-00019" summary="changed to vite">
+      <option name="closed" value="true" />
+      <created>1730117086730</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730117086730</updated>
+    </task>
+    <task id="LOCAL-00020" summary="updated portfolio">
+      <option name="closed" value="true" />
+      <created>1730122300944</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1730122300944</updated>
+    </task>
+    <task id="LOCAL-00021" summary="updated portfolio">
+      <option name="closed" value="true" />
+      <created>1730123397468</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1730123397468</updated>
+    </task>
+    <task id="LOCAL-00022" summary="updated portfolio">
+      <option name="closed" value="true" />
+      <created>1730152793859</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1730152793859</updated>
+    </task>
+    <task id="LOCAL-00023" summary="tanstack start">
+      <option name="closed" value="true" />
+      <created>1730191171928</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1730191171928</updated>
+    </task>
+    <task id="LOCAL-00024" summary="vercel deploy">
+      <option name="closed" value="true" />
+      <created>1730191442168</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1730191442168</updated>
+    </task>
+    <task id="LOCAL-00025" summary="cloudflare hosting">
+      <option name="closed" value="true" />
+      <created>1730191743527</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1730191743527</updated>
+    </task>
+    <task id="LOCAL-00026" summary="package fix">
+      <option name="closed" value="true" />
+      <created>1730191974354</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1730191974354</updated>
+    </task>
+    <task id="LOCAL-00027" summary="cloudflare-pages deploy">
+      <option name="closed" value="true" />
+      <created>1730192244909</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1730192244909</updated>
+    </task>
+    <task id="LOCAL-00028" summary="cloudflare-pages deploy">
+      <option name="closed" value="true" />
+      <created>1730192560324</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1730192560324</updated>
+    </task>
+    <task id="LOCAL-00029" summary="cloudflare-pages new build">
+      <option name="closed" value="true" />
+      <created>1730193439452</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1730193439452</updated>
+    </task>
+    <task id="LOCAL-00030" summary="cloudflare-pages new build">
+      <option name="closed" value="true" />
+      <created>1730193454097</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1730193454097</updated>
+    </task>
+    <task id="LOCAL-00031" summary="cloudflare-pages new build">
+      <option name="closed" value="true" />
+      <created>1730193563977</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1730193563977</updated>
+    </task>
+    <task id="LOCAL-00032" summary="cloudflare-pages deleted vite project">
+      <option name="closed" value="true" />
+      <created>1730194133396</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1730194133396</updated>
+    </task>
+    <task id="LOCAL-00033" summary="updated title">
+      <option name="closed" value="true" />
+      <created>1730194348214</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1730194348214</updated>
+    </task>
+    <task id="LOCAL-00034" summary="updated gitignore">
+      <option name="closed" value="true" />
+      <created>1730194553325</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1730194553325</updated>
+    </task>
+    <task id="LOCAL-00035" summary="updated app.config.ts">
+      <option name="closed" value="true" />
+      <created>1730195310223</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1730195310223</updated>
+    </task>
+    <task id="LOCAL-00036" summary="reverted to vite">
+      <option name="closed" value="true" />
+      <created>1730195935731</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1730195935731</updated>
+    </task>
+    <task id="LOCAL-00037" summary="updated index.html">
+      <option name="closed" value="true" />
+      <created>1730196356653</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1730196356653</updated>
+    </task>
+    <task id="LOCAL-00038" summary="updated index.html">
+      <option name="closed" value="true" />
+      <created>1730197432347</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1730197432347</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Configured prettier" />
+    <MESSAGE value="Created empty backend application" />
+    <MESSAGE value="Configured api project to work with ts and .env file" />
+    <MESSAGE value="Configured api project to work nodemon and prisma setup" />
+    <MESSAGE value="gitignore update" />
+    <MESSAGE value="Prisma connection" />
+    <MESSAGE value="Fixed build of ui app" />
+    <MESSAGE value="Moved files to src/ folder" />
+    <MESSAGE value="Created portfolio CSS page" />
+    <MESSAGE value="Fixed import issues" />
+    <MESSAGE value="vercel hosting" />
+    <MESSAGE value="changed to vite" />
+    <MESSAGE value="updated portfolio" />
+    <MESSAGE value="tanstack start" />
+    <MESSAGE value="vercel deploy" />
+    <MESSAGE value="cloudflare hosting" />
+    <MESSAGE value="package fix" />
+    <MESSAGE value="cloudflare-pages deploy" />
+    <MESSAGE value="cloudflare-pages new build" />
+    <MESSAGE value="cloudflare-pages deleted vite project" />
+    <MESSAGE value="updated title" />
+    <MESSAGE value="updated gitignore" />
+    <MESSAGE value="updated app.config.ts" />
+    <MESSAGE value="reverted to vite" />
+    <MESSAGE value="updated index.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated index.html" />
+  </component>
+</project>

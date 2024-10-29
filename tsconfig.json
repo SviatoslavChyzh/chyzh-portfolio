@@ -1,44 +1,36 @@
 {
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/.server/**/*.ts",
+    "**/.server/**/*.tsx",
+    "**/.client/**/*.ts",
+    "**/.client/**/*.tsx"
+  ],
   "compilerOptions": {
-    /* Base Options: */
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "moduleResolution": "Bundler",
-    "strictNullChecks": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "target": "ES2022",
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": [
+        "@remix-run/cloudflare",
+        "vite/client",
+        "@cloudflare/workers-types/2023-07-01"
+    ],
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-
-    /* Strictness */
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-
-    /* If transpiling with TypeScript: */
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
     "module": "ESNext",
-    "outDir": "dist",
-    "sourceMap": true,
-
-    /* AND if you're building for a library: */
-    "declaration": true,
-
-    /* AND if you're building for a library in a monorepo: */
-    "composite": true,
-    "declarationMap": true,
-
-    /* If your code runs in the DOM: */
-    "lib": ["ESNext", "dom", "dom.iterable"],
-
-    /* Import Aliases */
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "~/*": ["./app/*"]
     },
-  },
-  "ignore": ["node_modules", "dist", "**/*.config.ts", "**/*.test.ts", "**/*.test.tsx"]
+
+    // Vite takes care of building everything, not tsc.
+    "noEmit": true
+  }
 }
