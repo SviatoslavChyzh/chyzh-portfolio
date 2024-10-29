@@ -1,102 +1,79 @@
-import { BookOpen, Bot, Frame, Map, PieChart, Settings2, SquareTerminal } from 'lucide-react';
+import { Frame, Map, PieChart } from 'lucide-react';
 import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from '@/components/ui/sidebar';
 import { NavMain } from '@/features/sidebar/components/nav-main';
-import { NavProjects } from '@/features/sidebar/components/nav-projects';
 import { NavUser } from '@/features/sidebar/components/nav-user';
 import type { ComponentProps } from 'react';
-import avatar from '../images/avatar.jpg';
+import avatar from '@/assets/avatar.jpg';
+import {
+  SiNodedotjs,
+  SiNx,
+  SiReact,
+  SiReacthookform,
+  SiReactquery,
+  SiReactrouter,
+  SiTailwindcss,
+  SiTypescript,
+  SiZod,
+} from 'react-icons/si';
 
 const data = {
   user: {
     name: 'Sviatoslav Chyzh',
-    email: 'slavik.chyzh@gmail.com',
+    email: '',
     avatar: avatar,
   },
   navMain: [
     {
-      title: 'Playground',
+      title: 'React',
       url: '#',
-      icon: SquareTerminal,
+      icon: SiReact,
       isActive: true,
       items: [
         {
-          title: 'History',
-          url: '#',
-        },
-        {
-          title: 'Starred',
-          url: '#',
-        },
-        {
-          title: 'Settings',
+          title: 'React experience',
           url: '#',
         },
       ],
     },
     {
-      title: 'Models',
+      title: 'Typescript',
       url: '#',
-      icon: Bot,
-      items: [
-        {
-          title: 'Genesis',
-          url: '#',
-        },
-        {
-          title: 'Explorer',
-          url: '#',
-        },
-        {
-          title: 'Quantum',
-          url: '#',
-        },
-      ],
+      icon: SiTypescript,
     },
     {
-      title: 'Documentation',
+      title: 'Tailwind CSS',
       url: '#',
-      icon: BookOpen,
-      items: [
-        {
-          title: 'Introduction',
-          url: '#',
-        },
-        {
-          title: 'Get Started',
-          url: '#',
-        },
-        {
-          title: 'Tutorials',
-          url: '#',
-        },
-        {
-          title: 'Changelog',
-          url: '#',
-        },
-      ],
+      icon: SiTailwindcss,
     },
     {
-      title: 'Settings',
+      title: 'Tanstack',
       url: '#',
-      icon: Settings2,
-      items: [
-        {
-          title: 'General',
-          url: '#',
-        },
-        {
-          title: 'Team',
-          url: '#',
-        },
-        {
-          title: 'Billing',
-          url: '#',
-        },
-        {
-          title: 'Limits',
-          url: '#',
-        },
-      ],
+      icon: SiReactquery,
+    },
+    {
+      title: 'NX',
+      url: '#',
+      icon: SiNx,
+    },
+    {
+      title: 'React Router',
+      url: '#',
+      icon: SiReactrouter,
+    },
+    {
+      title: 'Validation',
+      url: '#',
+      icon: SiZod,
+    },
+    {
+      title: 'React Hook Form',
+      url: '#',
+      icon: SiReacthookform,
+    },
+    {
+      title: 'Node.js',
+      url: '#',
+      icon: SiNodedotjs,
     },
   ],
   projects: [
@@ -126,7 +103,7 @@ export function AppSidebar({ ...props }: ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        {/*<NavProjects projects={data.projects} />*/}
       </SidebarContent>
       <SidebarRail />
     </Sidebar>

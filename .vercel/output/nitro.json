@@ -1,0 +1,15 @@
+{
+  "date": "2024-10-29T08:37:26.060Z",
+  "preset": "vercel",
+  "framework": {
+    "name": "nitro",
+    "version": "2.9.7"
+  },
+  "versions": {
+    "nitro": "2.9.7"
+  },
+  "commands": {
+    "preview": "",
+    "deploy": ""
+  }
+}

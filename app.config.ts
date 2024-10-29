@@ -1,13 +1,15 @@
 import { defineConfig } from '@tanstack/start/config';
-import viteTsConfigPaths from 'vite-tsconfig-paths';
+import tsConfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   vite: {
     plugins: [
-      // this is the plugin that enables path aliases
-      viteTsConfigPaths({
+      tsConfigPaths({
         projects: ['./tsconfig.json'],
       }),
     ],
+  },
+  server: {
+    preset: 'vercel',
   },
 });

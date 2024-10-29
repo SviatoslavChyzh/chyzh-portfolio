@@ -11,8 +11,9 @@ import {
 } from '@/components/ui/card';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { JOB_EXPERIENCE } from '@/features/job-experience/constants';
-import { ThemeProvider } from '@/features/theme/components/ThemeProvider';
 import { ModeToggle } from '@/features/theme/components/ModeToggle';
+import ReactExperience from '@/features/articles/components/ReactExperience';
+import { ThemeProvider } from '@/features/theme/components/ThemeProvider';
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -38,29 +39,42 @@ function Home() {
           </header>
           <Card className="mx-4">
             <CardHeader>
-              <CardTitle>My Resume</CardTitle>
+              <CardTitle>Sviatoslav Chyzh</CardTitle>
               <CardDescription>skills & experience</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="mb-6 max-w-[45ch] border-b-4">Intro</p>
+              <p className="mb-6 max-w-[45ch] border-b-4">
+                I am a software engineer with a passion for building web applications. I have
+                experience working with React, TypeScript, and Tailwind CSS. I am always looking to
+                learn new technologies and improve my skills
+              </p>
               <div
                 className={`${isMobile ? 'w-[calc(100vw-10rem)]' : 'w-[calc(100vw-25rem)]'} job-experience relative grid grid-flow-col justify-start gap-4 overflow-auto p-4`}
               >
                 {JOB_EXPERIENCE.map((job) => (
                   <Card key={job.id}>
                     <CardHeader>
-                      <CardTitle>Job Year</CardTitle>
+                      <CardDescription className="text-primary">
+                        {job.startDate} - {job.endDate}
+                      </CardDescription>
+                      <CardTitle>
+                        <div className="flex min-w-96 items-center justify-between gap-4">
+                          <h2>{job.title}</h2>
+                          <span className="uppercase text-accent">{job.company}</span>
+                        </div>
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="flex min-w-96 items-center justify-between gap-4">
-                        <h2>Job Role</h2>
-                        <span className="uppercase">Company name</span>
-                      </div>
+                      <ul className="list-disc text-muted-foreground">
+                        {job.description.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
                     </CardContent>
-                    <CardFooter>Description</CardFooter>
                   </Card>
                 ))}
               </div>
+              <ReactExperience />
             </CardContent>
             <CardFooter></CardFooter>
           </Card>

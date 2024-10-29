@@ -32,7 +32,7 @@
     "declarationMap": true,
 
     /* If your code runs in the DOM: */
-    "lib": ["ESNext", "dom", "dom.iterable"],
+    "lib": ["ES2022", "dom", "dom.iterable"],
 
     /* Import Aliases */
     "baseUrl": ".",
