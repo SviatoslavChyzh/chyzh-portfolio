@@ -3,8 +3,8 @@
     "file": "assets/globals-DZyZsH2T.css",
     "src": "/Users/Sviatoslav.Chyzh/Documents/Slavik/projects/chyzh-portfolio/app/globals.css"
   },
-  "_ssr-ZlN8JW30.js": {
-    "file": "assets/ssr-ZlN8JW30.js",
+  "_ssr-Bfrkq_mp.js": {
+    "file": "assets/ssr-Bfrkq_mp.js",
     "name": "ssr",
     "dynamicImports": [
       "app/routes/index.tsx?tsr-split"
@@ -18,12 +18,12 @@
     "src": "app/assets/avatar.jpg"
   },
   "app/routes/index.tsx?tsr-split": {
-    "file": "assets/index-BabbpXxs.js",
+    "file": "assets/index-C0o0UQRK.js",
     "name": "index",
     "src": "app/routes/index.tsx?tsr-split",
     "isDynamicEntry": true,
     "imports": [
-      "_ssr-ZlN8JW30.js"
+      "_ssr-Bfrkq_mp.js"
     ],
     "assets": [
       "assets/avatar-BJAW_CWN.jpg"
@@ -35,7 +35,7 @@
     "src": "virtual:$vinxi/handler/ssr",
     "isEntry": true,
     "imports": [
-      "_ssr-ZlN8JW30.js"
+      "_ssr-Bfrkq_mp.js"
     ]
   }
 }
