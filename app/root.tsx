@@ -1,4 +1,4 @@
-import type { LinksFunction } from "@remix-run/cloudflare";
+import type { LinksFunction } from '@remix-run/cloudflare';
 import {
   Links,
   Meta,
@@ -6,8 +6,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { cssBundleHref } from '@remix-run/css-bundle';
+import type { ReactNode } from 'react';
 
-import "./styles.css";
+import styles from './styles.css?url';
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -20,9 +22,11 @@ export const links: LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  { rel: "stylesheet", href: styles },
+  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
