@@ -3,7 +3,7 @@ import { Sidebar, SidebarContent, SidebarHeader, SidebarRail } from '@/component
 import { NavMain } from '@/features/sidebar/components/nav-main';
 import { NavUser } from '@/features/sidebar/components/nav-user';
 import type { ComponentProps } from 'react';
-import avatar from '../../../assets/avatar.jpg';
+import avatar from '/avatar.jpg';
 import {
   SiNodedotjs,
   SiNx,
