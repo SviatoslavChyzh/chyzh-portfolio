@@ -4,37 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1f24d19-b859-41ee-b07a-970048c7b8d5" name="Changes" comment="remix initial commit">
-      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/avatar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/collapsible.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/dropdown-menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/separator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/sheet.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/sidebar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/skeleton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/ui/tooltip.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/hooks/use-mobile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/lib/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vite.config.ts.timestamp-1730205124275-b66909280429.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vite.config.ts.timestamp-1730205148001-fd61f0488b68f.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vite.config.ts.timestamp-1730205210971-baf9eb5016a.mjs" afterDir="false" />
+    <list default="true" id="c1f24d19-b859-41ee-b07a-970048c7b8d5" name="Changes" comment="installed shadcn">
+      <change afterPath="$PROJECT_DIR$/app/assets/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/sidebar/app-sidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/sidebar/nav-main.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/sidebar/nav-projects.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/sidebar/nav-user.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/theme/ModeToggle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/constants/indes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/providers/ThemeProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.cjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/entry.server.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/entry.server.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ui/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ui/sheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ui/sheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ui/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ui/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/ui/tooltip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/ui/tooltip.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/root.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/_index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/_index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/[[path]].ts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/[[path]].ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,11 +118,11 @@
       <recent name="$PROJECT_DIR$/app/features/sidebar/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/app/features/sidebar/images" />
-      <recent name="$PROJECT_DIR$/app/features/sidebar/avatar" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.api">
@@ -223,7 +212,7 @@
       <workItem from="1690524269406" duration="186000" />
       <workItem from="1690524462168" duration="7869000" />
       <workItem from="1690554476727" duration="10000" />
-      <workItem from="1730041562649" duration="45934000" />
+      <workItem from="1730041562649" duration="55188000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1682886840241</created>
@@ -524,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730202447743</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="installed shadcn">
+      <option name="closed" value="true" />
+      <created>1730205625723</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1730205625723</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created empty backend application" />
     <MESSAGE value="Configured api project to work with ts and .env file" />
     <MESSAGE value="Configured api project to work nodemon and prisma setup" />
     <MESSAGE value="gitignore update" />
@@ -595,6 +591,7 @@
     <MESSAGE value="reverted to vite" />
     <MESSAGE value="updated index.html" />
     <MESSAGE value="remix initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="remix initial commit" />
+    <MESSAGE value="installed shadcn" />
+    <option name="LAST_COMMIT_MESSAGE" value="installed shadcn" />
   </component>
 </project>
