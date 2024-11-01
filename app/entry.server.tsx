@@ -46,7 +46,7 @@ export default async function handleRequest(
 
   responseHeaders.set('Content-Type', 'text/html');
   return new Response(body, {
-    headers: responseHeaders,
+    headers: { "Cache-Control": "no-store, max-age=0", ...responseHeaders },
     status: responseStatusCode,
   });
 }
