@@ -1,4 +1,13 @@
-export const JOB_EXPERIENCE = [
+export type JobExperience = {
+  id: string;
+  title: string;
+  company: string;
+  startDate: string;
+  endDate: string;
+  description: string[];
+};
+
+export const JOB_EXPERIENCE: Array<JobExperience> = [
   {
     id: '1',
     title: 'Front-End Software Engineer',
@@ -22,7 +31,8 @@ export const JOB_EXPERIENCE = [
     endDate: 'Jun 2021',
     description: [
       'Migrated project for matching product groups from VB.NET ASP Classic to newer technology stack such as: ASP.NET Core 3.1, Angular, Angular Material, State management Akita',
-      'Involved in the design and implementation of enhancements and customizations • Executed SQL queries to ensure the data integrity by checking various kinds of constraints',
+      'Involved in the design and implementation of enhancements and customizations',
+      'Executed SQL queries to ensure the data integrity by checking various kinds of constraints',
       'Work with various teams to setup and conduct Sharable Components Library',
     ],
   },

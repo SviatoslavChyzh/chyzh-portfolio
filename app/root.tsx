@@ -1,14 +1,14 @@
 import type { LinksFunction } from '@remix-run/cloudflare';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
 import { cssBundleHref } from '@remix-run/css-bundle';
+import { Analytics } from '@vercel/analytics/react';
 
 import appStylesHref from './styles.css?url';
-import { AppSidebar } from '@/components/sidebar/app-sidebar';
-import { SidebarProvider } from '@/components/ui/sidebar';
 import { themeSessionResolver } from '@/sessions.server';
 import type { LoaderFunctionArgs } from '@remix-run/router';
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
 import { clsx } from 'clsx';
+import Navbar from '@/components/navbar/navbar';
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -46,12 +46,11 @@ export function App() {
         <Links />
       </head>
       <body>
-        <SidebarProvider>
-          <AppSidebar />
-          <Outlet />
-        </SidebarProvider>
+        <Navbar />
+        <Outlet />
         <ScrollRestoration />
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );

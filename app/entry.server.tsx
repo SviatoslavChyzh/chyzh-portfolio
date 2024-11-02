@@ -11,6 +11,13 @@ import { renderToReadableStream } from 'react-dom/server';
 
 const ABORT_DELAY = 5000;
 
+export function headers() {
+  return {
+    "X-Cache-Debug": "v1",
+    "X-Deploy-Time": new Date().toISOString(),
+  };
+}
+
 export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
@@ -46,7 +53,7 @@ export default async function handleRequest(
 
   responseHeaders.set('Content-Type', 'text/html');
   return new Response(body, {
-    headers: { "Cache-Control": "no-store, max-age=0", ...responseHeaders },
+    headers: responseHeaders,
     status: responseStatusCode,
   });
 }
