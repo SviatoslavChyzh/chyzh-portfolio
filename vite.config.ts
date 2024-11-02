@@ -27,4 +27,9 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  build: {
+    rollupOptions: {
+      external: ['tailwind-merge'],
+    },
+  },
 });
