@@ -1,7 +1,6 @@
 import type { LinksFunction } from '@remix-run/cloudflare';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from '@remix-run/react';
 import { cssBundleHref } from '@remix-run/css-bundle';
-import { Analytics } from '@vercel/analytics/react';
 
 import appStylesHref from './styles.css?url';
 import { themeSessionResolver } from '@/sessions.server';
@@ -50,7 +49,6 @@ export function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <Analytics />
       </body>
     </html>
   );
