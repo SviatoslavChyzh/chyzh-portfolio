@@ -3,13 +3,13 @@ import type { JobExperience } from '@/constants/indes';
 
 export default function ExperienceCard({ job }: { job: JobExperience }) {
   return (
-    <Card key={job.id}>
+    <Card key={job.id} className="p-8">
       <CardHeader>
         <CardDescription className="text-primary">
           {job.startDate} - {job.endDate}
         </CardDescription>
         <CardTitle>
-          <div className="flex min-w-96 items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-4">
             <h2>{job.title}</h2>
             <span className="uppercase text-accent">{job.company}</span>
           </div>

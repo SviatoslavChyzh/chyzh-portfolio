@@ -7,7 +7,6 @@ import { themeSessionResolver } from '@/sessions.server';
 import type { LoaderFunctionArgs } from '@remix-run/router';
 import { PreventFlashOnWrongTheme, ThemeProvider, useTheme } from 'remix-themes';
 import { clsx } from 'clsx';
-import Navbar from '@/components/navbar/navbar';
 
 export const links: LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -45,7 +44,6 @@ export function App() {
         <Links />
       </head>
       <body>
-        <Navbar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
