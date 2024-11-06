@@ -1,3 +1,5 @@
+export const HEADER_HEIGHT = 4;
+
 export type JobExperience = {
   id: string;
   title: string;
@@ -89,4 +91,26 @@ export const JOB_EXPERIENCE: Array<JobExperience> = [
     endDate: 'Mar 2012',
     description: ['JavaScript, HTML, CSS.', 'Development of the web application for the company.'],
   },
+];
+
+export const SKILLS = [
+  'React',
+  'TypeScript',
+  'JavaScript',
+  'HTML',
+  'CSS',
+  'Tailwind CSS',
+  'Node.js',
+  'Express.js',
+  'REST API',
+  'PostgreSQL',
+  'Git',
+  'Jest',
+  'React Testing Library',
+  'Agile',
+  'Scrum',
+  'Jira',
+  'Confluence',
+  'GitHub',
+  'GitLab',
 ];
