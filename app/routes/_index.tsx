@@ -42,7 +42,7 @@ export default function Index() {
             }
           });
         },
-        { threshold: 0.3 },
+        { threshold: 0.2 },
       );
 
       if (sections[key]?.current) {
