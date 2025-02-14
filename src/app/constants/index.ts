@@ -6,8 +6,25 @@ export type JobExperience = {
   company: string;
   startDate: string;
   endDate: string;
-  description: string[];
+  description?: string[];
 };
+
+export const EDUCATION: Array<JobExperience> = [
+  {
+    id: '1',
+    title: "Master's degree, Engineering Physics/Applied Physics",
+    company: 'Ivan Franko National University of Lviv',
+    startDate: '01/2004 ',
+    endDate: '12/2009',
+  },
+  {
+    id: '2',
+    title: 'Cisco Certified Network Associate (CCNA) Routing and Switching',
+    company: 'Cisco Academy at Ternopil Ivan Puluj National Technical University',
+    startDate: '2009',
+    endDate: '2010',
+  },
+];
 
 export const JOB_EXPERIENCE: Array<JobExperience> = [
   {

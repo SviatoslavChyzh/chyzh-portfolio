@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { SKILLS } from '@/app/constants';
 import Image from 'next/image';
-import { SkillIcon } from '@/components/icons';
 
 export default function HeroSection() {
   return (
@@ -13,7 +12,7 @@ export default function HeroSection() {
           <CardHeader className="text-nowrap text-3xl">
             <CardTitle className="flex items-center gap-6">
               <Avatar className="h-20 w-20">
-                <AvatarImage src="/avatar.png" alt="SC" />
+                <AvatarImage src="/avatar.jpeg" alt="SC" />
                 <AvatarFallback>SC</AvatarFallback>
               </Avatar>
               <span className="font-mono font-thin text-accent">I am,</span> Sviatoslav Chyzh

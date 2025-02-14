@@ -3,11 +3,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 export default function Experience() {
   return (
-    <section className="container min-h-screen" id="experience">
+    <section className="container min-h-screen pb-10" id="experience">
       <h2 className="p-8 text-3xl text-blue-600">💼 Work Experience</h2>
       <div className="grid grid-cols-auto-fill-100 gap-4">
         {JOB_EXPERIENCE.map((job) => (
-          <Card key={job.id} className="p-8 hover:bg-gray-100 hover:shadow-lg">
+          <Card key={job.id} className="p-8 hover:bg-secondary hover:shadow-lg">
             <CardHeader>
               <CardDescription className="text-primary">
                 {job.startDate} - {job.endDate}
@@ -21,9 +21,7 @@ export default function Experience() {
             </CardHeader>
             <CardContent>
               <ul className="list-disc text-muted-foreground">
-                {job.description.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {job.description?.map((item, index) => <li key={index}>{item}</li>)}
               </ul>
             </CardContent>
           </Card>
