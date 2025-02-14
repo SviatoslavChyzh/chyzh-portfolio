@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { getDictionary } from '@/app/[lang]/dictionaries';
 import HeroSection from '@/app/_components/HeroSection';
 import Experience from '@/app/_components/Experience';
@@ -14,7 +13,7 @@ export default async function Home({
   params: Promise<{ parish: string; lang: Locale }>;
 }) {
   const { lang } = await params;
-  const { page } = await getDictionary(lang);
+  const { navigationTitle } = await getDictionary(lang);
   return (
     <main>
       <HeroSection />
