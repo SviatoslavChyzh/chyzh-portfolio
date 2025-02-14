@@ -12,7 +12,7 @@ export default {
     extend: {
       container: {
         center: true,
-        padding: '2rem',
+        padding: '1rem',
         screens: {
           sm: '100%',
           md: '100%',
@@ -22,7 +22,7 @@ export default {
       },
       gridTemplateColumns: {
         'auto-fill-100': 'repeat(auto-fill, minmax(30rem, 1fr))',
-        'auto-fit-100': 'repeat(auto-fit, minmax(100px, 1fr))',
+        'auto-fit-100': 'repeat(auto-fit, minmax(30rem, 1fr))',
       },
       colors: {
         background: 'hsl(var(--background))',

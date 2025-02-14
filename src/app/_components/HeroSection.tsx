@@ -6,8 +6,8 @@ import Image from 'next/image';
 
 export default function HeroSection() {
   return (
-    <div className="relative grid h-screen items-center overflow-x-clip" id="intro">
-      <div className="container grid grid-cols-auto-fill-100 gap-6">
+    <div className="relative grid min-h-screen items-center overflow-x-clip" id="intro">
+      <div className="container mt-40 grid gap-6 md:mt-0 lg:mt-0 lg:grid-cols-auto-fit-100">
         <Card className="bg-transparent">
           <CardHeader className="text-nowrap text-3xl">
             <CardTitle className="flex items-center gap-6">
@@ -15,7 +15,10 @@ export default function HeroSection() {
                 <AvatarImage src="/avatar.jpeg" alt="SC" />
                 <AvatarFallback>SC</AvatarFallback>
               </Avatar>
-              <span className="font-mono font-thin text-accent">I am,</span> Sviatoslav Chyzh
+              <div className="flex flex-wrap gap-4">
+                <span className="font-mono font-thin text-accent">I am,</span>
+                <span>Sviatoslav Chyzh</span>
+              </div>
             </CardTitle>
           </CardHeader>
           <CardContent className="text-start text-xl text-muted-foreground">
@@ -41,7 +44,7 @@ export default function HeroSection() {
           </CardContent>
         </Card>
       </div>
-      <Image fill className="header-image" src="/city-at-night.jpg" alt="header-image" layout="" />
+      <Image fill className="header-image" src="/city-at-night.jpg" alt="header-image" />
     </div>
   );
 }

@@ -7,14 +7,16 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[radial-gradient(hsl(0,72%,65%,40%),hsl(24,62%,73%,40%),hsl(var(--background))_90%)] p-10"
+      className="bg-[radial-gradient(hsl(0,72%,65%,40%),hsl(24,62%,73%,40%),hsl(var(--background))_90%)] py-10"
     >
-      <div className="container grid grid-cols-auto-fill-100 gap-4">
+      <div className="container grid gap-4 lg:grid-cols-auto-fit-100">
         <Card>
           <CardHeader className="text-nowrap text-3xl">
             <CardTitle className="flex items-center gap-6">Get in touch</CardTitle>
             <CardDescription>
-              I am available on social media and email. Feel free to reach out to me
+              <span className="text-wrap">
+                I am available on social media and email. Feel free to reach out to me
+              </span>
               <Separator />
             </CardDescription>
           </CardHeader>

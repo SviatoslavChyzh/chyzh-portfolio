@@ -5,10 +5,10 @@ export default function Education() {
   return (
     <section className="bg-secondary pb-10" id="education">
       <div className="container">
-        <h2 className="p-8 text-3xl text-blue-600">🏫 Education</h2>
-        <div className="grid grid-cols-auto-fill-100 gap-4">
+        <h2 className="text-3xl text-blue-600 lg:p-8">🏫 Education</h2>
+        <div className="grid gap-4 lg:grid-cols-auto-fit-100">
           {EDUCATION.map((job) => (
-            <Card key={job.id} className="p-8 hover:bg-primary-foreground hover:shadow-lg">
+            <Card key={job.id} className="mx-8 p-8 hover:bg-primary-foreground hover:shadow-lg">
               <CardHeader>
                 <CardDescription className="text-primary">
                   🗓️ {job.startDate} - {job.endDate}

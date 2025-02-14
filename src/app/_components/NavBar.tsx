@@ -15,13 +15,13 @@ export default async function NavBar({ lang }: { lang: Locale }) {
 
   return (
     <header className="fixed top-0 z-10 flex h-[96px] w-full border-b border-white/10 shadow-xl backdrop-blur-lg">
-      <nav className="container flex items-center justify-between gap-4 font-semibold">
+      <nav className="container flex items-center justify-between px-8 font-semibold">
         <Link href={`/${lang}`} className="flex items-center gap-4">
-          <Avatar className="my-4">
+          <Avatar>
             <AvatarImage src="/logo.png" alt="SC" />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
-          <span className="text-gray-800 dark:text-white sm:text-lg sm:font-semibold lg:text-2xl lg:font-bold">
+          <span className="hidden text-gray-800 dark:text-white lg:block lg:text-2xl lg:font-bold">
             Sviatoslav Chyzh
           </span>
         </Link>
@@ -44,9 +44,7 @@ export default async function NavBar({ lang }: { lang: Locale }) {
           </div>
 
           {/*MobileMenu*/}
-          <div className="flex items-center gap-2 lg:hidden">
-            <MobileMenu menuItems={menuItems} lang={lang} menuTitle={navigationTitle} />
-          </div>
+          <MobileMenu menuItems={menuItems} lang={lang} menuTitle={navigationTitle} />
         </div>
       </nav>
     </header>
