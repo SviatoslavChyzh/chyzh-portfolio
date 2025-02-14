@@ -6,6 +6,8 @@ import NavLinks from '@/app/_components/NavLinks';
 import MobileMenu from '@/app/_components/MobileMenu';
 import ThemeToggle from '@/components/theme-toggle';
 import LocaleSwitcher from '@/app/_components/LocaleSwitcher';
+import { Github } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default async function NavBar({ lang }: { lang: Locale }) {
   const { navigation, navigationTitle } = await getDictionary(lang);
@@ -30,6 +32,15 @@ export default async function NavBar({ lang }: { lang: Locale }) {
           <div className="flex gap-2">
             <ThemeToggle />
             <LocaleSwitcher />
+            <Link
+              href="https://github.com/SviatoslavChyzh/chyzh-portfolio"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button variant="outline" size="icon">
+                <Github />
+              </Button>
+            </Link>
           </div>
 
           {/*MobileMenu*/}

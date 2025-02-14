@@ -44,6 +44,7 @@ export default function ContactForm() {
       email: '',
       message: '',
     },
+    mode: 'onTouched',
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {

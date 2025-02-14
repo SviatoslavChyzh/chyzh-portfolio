@@ -6,6 +6,7 @@ import Education from '@/app/_components/Education';
 import Contact from '@/app/_components/Contact';
 
 export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 export default async function Home({
   params,
@@ -24,6 +25,7 @@ export default async function Home({
       {/*  Home*/}
       {/*</div>*/}
       {/*test*/}
+      <div className="hidden">{navigationTitle}</div>
     </main>
   );
 }

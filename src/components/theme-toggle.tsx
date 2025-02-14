@@ -22,7 +22,7 @@ export default function ThemeToggle() {
       variant="outline"
       size="icon"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="rounded-md p-2 hover:bg-gray-200 dark:hover:bg-gray-700"
+      className="rounded-md p-2"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
