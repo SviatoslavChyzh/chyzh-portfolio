@@ -5,5 +5,6 @@
     "#education": "Education",
     "#contact": "Contact"
   },
-  "navigationTitle": "Main Menu"
+  "navigationTitle": "Main Menu",
+  "heroSection": "a software engineer with a passion for building web applications, based in Germany. I have experience working with React, TypeScript, and Tailwind CSS. I am always looking to learn new technologies and improve my skills"
 }

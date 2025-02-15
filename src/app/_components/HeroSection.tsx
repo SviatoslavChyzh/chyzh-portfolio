@@ -3,8 +3,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { SKILLS } from '@/app/constants';
 import Image from 'next/image';
+import type { Locale } from '@/app/types';
+import { getDictionary } from '@/app/[lang]/dictionaries';
 
-export default function HeroSection() {
+export default async function HeroSection({ lang }: { lang: Locale }) {
+  const { heroSection } = await getDictionary(lang);
+
   return (
     <div className="relative grid min-h-screen items-center overflow-x-clip" id="intro">
       <div className="container mt-40 grid gap-6 md:mt-0 lg:mt-0 lg:grid-cols-auto-fit-100">
@@ -16,15 +20,15 @@ export default function HeroSection() {
                 <AvatarFallback>SC</AvatarFallback>
               </Avatar>
               <div className="flex flex-wrap gap-4">
-                <span className="font-mono font-thin text-accent">I am,</span>
+                <span className="font-mono font-thin text-accent">
+                  {lang === 'en' ? 'I am,' : 'Ich bin,'}
+                </span>
                 <span>Sviatoslav Chyzh</span>
               </div>
             </CardTitle>
           </CardHeader>
           <CardContent className="text-start text-xl text-muted-foreground">
-            a software engineer with a passion for building web applications, based in Germany. I
-            have experience working with React, TypeScript, and Tailwind CSS. I am always looking to
-            learn new technologies and improve my skills
+            {heroSection}
           </CardContent>
         </Card>
         <Card className="bg-transparent">

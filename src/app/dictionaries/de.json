@@ -5,5 +5,6 @@
     "#education": "Bildung",
     "#contact": "Kontakt"
   },
-  "navigationTitle": "Hauptmenü"
+  "navigationTitle": "Hauptmenü",
+    "heroSection": "ein Software-Ingenieur mit Leidenschaft für den Bau von Webanwendungen, ansässig in Deutschland. Ich habe Erfahrung in der Arbeit mit React, TypeScript und Tailwind CSS. Ich bin immer auf der Suche nach neuen Technologien und der Verbesserung meiner Fähigkeiten"
 }

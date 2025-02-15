@@ -17,8 +17,8 @@ export default async function Home({
   const { navigationTitle } = await getDictionary(lang);
   return (
     <main>
-      <HeroSection />
-      <Experience />
+      <HeroSection lang={lang} />
+      <Experience lang={lang} />
       <Education />
       <Contact />
       {/*<div className="h-screen bg-[radial-gradient(hsl(0,72%,65%,40%),hsl(24,62%,73%,40%),hsl(var(--background))_90%)]">*/}
