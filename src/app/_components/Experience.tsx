@@ -1,5 +1,7 @@
 import { JOB_EXPERIENCE } from '@/app/constants';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
 
 export default function Experience() {
   return (
@@ -23,6 +25,29 @@ export default function Experience() {
               <ul className="list-disc text-muted-foreground">
                 {job.description?.map((item, index) => <li key={index}>{item}</li>)}
               </ul>
+              <div className="mt-4 flex items-center gap-4">
+                {job.projects && (
+                  <>
+                    Projects:{' '}
+                    {job.projects.map((project, index) => (
+                      <Badge key={index} className="p-2">
+                        {project.link ? (
+                          <Link
+                            className="hover:text-white hover:underline"
+                            href={project.link as string}
+                            key={index}
+                            target="_blank"
+                          >
+                            {project.name}
+                          </Link>
+                        ) : (
+                          project.name
+                        )}
+                      </Badge>
+                    ))}
+                  </>
+                )}
+              </div>
             </CardContent>
           </Card>
         ))}

@@ -7,6 +7,10 @@ export type JobExperience = {
   startDate: string;
   endDate: string;
   description?: string[];
+  projects?: Array<{
+    name: string;
+    link?: string;
+  }>;
 };
 
 export const EDUCATION: Array<JobExperience> = [
@@ -31,32 +35,32 @@ export const JOB_EXPERIENCE: Array<JobExperience> = [
     id: '1',
     title: 'Front-End Software Engineer',
     company: 'GfK - NIQ company',
-    startDate: 'Jun 2021',
+    startDate: 'Oct 2019',
     endDate: 'Present',
     description: [
-      'Work with project managers, business analysts, and developers to get issues found during development cycle resolved and re-delivered to QA team for retest',
-      'Successfully collaborated as part of product teams for the launch of various projects that involved both front-end applications and back-end servers',
-      'Researched and articulated business requirements into Business requirement documents',
+      'Developed components for managing charts on the collections page for gfknewron using React, Express.js, Node.js, and PostgreSQL.',
+      'Managed UI state between microfrontends, ensuring seamless integration and improved user experience.',
+      'Successfully collaborated as part of data platform for the launch of various projects that involved both front-end applications and back-end servers',
       'Developed 4+ web applications by using responsive UI elements and shadcn/ui components library via React concepts for smooth performance',
       'Build user interfaces of web applications with React.js and JavaScript based on the approved designs',
       'Analyzed user requirements and developed 50+ responsive and functional UI components via React concepts',
+      'Work with various teams to setup and conduct Sharable Components Library',
+    ],
+    projects: [
+      {
+        name: 'gfknewron',
+        link: 'https://nielseniq.com/global/en/products/gfknewron/',
+      },
+      {
+        name: 'Data In DIS Admin',
+      },
+      {
+        name: 'Data Platform WebTas',
+      },
     ],
   },
   {
     id: '2',
-    title: 'Junior Software Engineer .NET',
-    company: 'GfK',
-    startDate: 'Oct 2019',
-    endDate: 'Jun 2021',
-    description: [
-      'Migrated project for matching product groups from VB.NET ASP Classic to newer technology stack such as: ASP.NET Core 3.1, Angular, Angular Material, State management Akita',
-      'Involved in the design and implementation of enhancements and customizations',
-      'Executed SQL queries to ensure the data integrity by checking various kinds of constraints',
-      'Work with various teams to setup and conduct Sharable Components Library',
-    ],
-  },
-  {
-    id: '3',
     title: 'Magento Developer',
     company: 'Smile Ukraine',
     startDate: 'Oct 2018',
@@ -64,7 +68,7 @@ export const JOB_EXPERIENCE: Array<JobExperience> = [
     description: ['Development of e-commerce web shops based on the Magento eCommerce platform.'],
   },
   {
-    id: '4',
+    id: '3',
     title: 'Engineer–Developer',
     company: 'Region “Ternopiloblenergo”',
     startDate: 'Jan 2017',
@@ -76,7 +80,7 @@ export const JOB_EXPERIENCE: Array<JobExperience> = [
     ],
   },
   {
-    id: '5',
+    id: '4',
     title: 'System administrator 1С',
     company: 'ТЕRКО Auto Ternopil',
     startDate: 'Jan 2016',
@@ -87,10 +91,10 @@ export const JOB_EXPERIENCE: Array<JobExperience> = [
     ],
   },
   {
-    id: '6',
+    id: '5',
     title: 'Junior developer',
     company: 'REM Zbarazh',
-    startDate: 'Mar 2012',
+    startDate: 'Sep 2009',
     endDate: 'Jan 2016',
     description: [
       'Run and terminated low voltage cable, voice and data structured cabling, fiber and coaxial.',
@@ -99,14 +103,6 @@ export const JOB_EXPERIENCE: Array<JobExperience> = [
       'Created and maintained Database clients of the electricity company in 0.4kV networks in\n' +
         'MSSQL.',
     ],
-  },
-  {
-    id: '7',
-    title: 'Junior developer',
-    company: 'IIT Ternopil – PAT “ISKRA” Lviv',
-    startDate: 'Sep 2009',
-    endDate: 'Mar 2012',
-    description: ['JavaScript, HTML, CSS.', 'Development of the web application for the company.'],
   },
 ];
 
