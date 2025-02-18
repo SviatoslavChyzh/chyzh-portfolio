@@ -1,29 +1,47 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+
+const flags: Record<string, string> = {
+  en: '/british-flag.jpg',
+  de: '/german-flag.jpg',
+} as const;
 
 export default function LocaleSwitcher() {
   const params = useParams();
-  const newLang = params.lang === 'en' ? 'de' : 'en';
+  const currentLang = params.lang as string;
+  const newLang = currentLang === 'en' ? 'de' : 'en';
 
-  function handleLocaleSwitch() {
-    window.location.href = `/${newLang}`;
+  function handleLocaleSwitch(value: string) {
+    window.location.href = `/${value}`;
   }
 
   return (
-    <Button
-      variant="outline"
-      size="icon"
-      aria-label={`Switch to ${newLang}`}
-      onClick={handleLocaleSwitch}
-    >
-      {params.lang === 'en' ? (
-        <Image src="/german-flag.jpg" height="25" width="25" alt="german-flag" />
-      ) : (
-        <Image src="/british-flag.jpg" height="25" width="25" alt="british-flag" />
-      )}
-    </Button>
+    <Select value={params.lang as string} onValueChange={handleLocaleSwitch}>
+      <SelectTrigger aria-label={`Switch to ${newLang}`}>
+        <SelectValue>
+          <Image src={flags[currentLang] as string} height="15" width="25" alt="flag" />
+        </SelectValue>
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem className="hover:cursor-pointer" value={newLang}>
+            <div className="flex gap-2">
+              <span>{newLang}: </span>
+              <Image src={flags[newLang] as string} height="15" width="25" alt="flag" />
+            </div>
+          </SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 }

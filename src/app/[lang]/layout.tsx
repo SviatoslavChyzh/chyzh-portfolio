@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import type { PropsWithChildren } from 'react';
 import type { Locale } from '@/app/types';
 import NavBar from '@/app/_components/NavBar';
+import { Toaster } from '@/components/ui/toaster';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,6 +40,7 @@ export default async function RootLayout({
         >
           <NavBar lang={lang} />
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

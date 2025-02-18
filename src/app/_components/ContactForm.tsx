@@ -17,6 +17,8 @@ import { Send } from 'lucide-react';
 
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 const formSchema = z.object({
   username: z
@@ -35,8 +37,14 @@ const formSchema = z.object({
     .max(500),
 });
 
+export type ContactFormType = z.infer<typeof formSchema>;
+
 export default function ContactForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const { toast } = useToast();
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<ContactFormType>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       username: '',
@@ -47,10 +55,49 @@ export default function ContactForm() {
     mode: 'onTouched',
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: ContactFormType) {
+    setIsSubmitting(true);
+
+    const formData = new FormData();
+    formData.append('username', values.username);
+    formData.append('email', values.email);
+    formData.append('message', values.message);
+    formData.append('subject', values.subject);
+
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      body: JSON.stringify({
+        username: formData.get('username'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+        subject: formData.get('subject'),
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data: { error?: string } = await response.json();
+    const { error } = data;
+
+    if (error) {
+      toast({
+        title: 'Error',
+        description: error,
+        variant: 'destructive',
+      });
+      setIsSubmitting(false);
+
+      return;
+    }
+
+    toast({
+      title: 'Success',
+      description: 'Your message has been sent.',
+    });
+
+    setIsSubmitting(false);
+    form.reset();
   }
 
   return (
@@ -114,7 +161,7 @@ export default function ContactForm() {
         />
 
         <Button type="submit">
-          Send <Send />
+          {isSubmitting ? 'Sending...' : 'Send Message'} <Send />
         </Button>
       </form>
     </Form>
