@@ -1,10 +1,10 @@
 {
   "navigation": {
-    "#intro": "Startseite",
+    "#intro": "Intro",
     "#experience": "Erfahrung",
     "#education": "Bildung",
     "#contact": "Kontakt"
   },
   "navigationTitle": "Hauptmenü",
-    "heroSection": "ein Software-Ingenieur mit Leidenschaft für den Bau von Webanwendungen, ansässig in Deutschland. Ich habe Erfahrung in der Arbeit mit React, TypeScript und Tailwind CSS. Ich bin immer auf der Suche nach neuen Technologien und der Verbesserung meiner Fähigkeiten"
+    "heroSection": "Software-Ingenieur mit Leidenschaft für die Entwicklung von Webanwendungen, ansässig in Deutschland. Ich habe Erfahrung in der Arbeit mit React, TypeScript und Tailwind CSS. Ich bin immer auf der Suche nach neuen Technologien und der Verbesserung meiner Fähigkeiten"
 }

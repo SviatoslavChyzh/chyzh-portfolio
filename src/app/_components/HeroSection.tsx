@@ -1,16 +1,22 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { SKILLS } from '@/app/constants';
 import Image from 'next/image';
 import type { Locale } from '@/app/types';
 import { getDictionary } from '@/app/[lang]/dictionaries';
+import type { CSSProperties } from 'react';
+import DownloadResumeButton from '@/app/_components/DownloadResumeButton';
 
 export default async function HeroSection({ lang }: { lang: Locale }) {
   const { heroSection } = await getDictionary(lang);
 
   return (
-    <div className="relative grid min-h-screen items-center overflow-x-clip" id="intro">
+    <section
+      className="relative grid min-h-screen items-center overflow-x-clip"
+      id="intro"
+      style={{ '--vt-name': '--intro' } as CSSProperties}
+    >
       <div className="container mt-40 grid gap-6 md:mt-0 lg:mt-0 lg:grid-cols-auto-fit-100">
         <Card className="bg-transparent">
           <CardHeader className="text-nowrap text-3xl">
@@ -30,6 +36,9 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
           <CardContent className="text-start text-xl text-muted-foreground">
             {heroSection}
           </CardContent>
+          <CardFooter>
+            <DownloadResumeButton />
+          </CardFooter>
         </Card>
         <Card className="bg-transparent">
           <CardHeader className="text-3xl">
@@ -48,7 +57,7 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
           </CardContent>
         </Card>
       </div>
-      <Image fill className="header-image" src="/city-at-night.jpg" alt="header-image" />
-    </div>
+      <Image fill className="header-image" src="/city-at-night.jpeg" alt="header-image" />
+    </section>
   );
 }

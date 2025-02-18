@@ -24,23 +24,21 @@ export default function NavLinks({
   }
 
   return (
-    <>
-      <div className="flex gap-8">
-        {menuItems.map((item) => (
-          <Link
-            key={item.href}
-            className={clsx(
-              {
-                'text-blue-600': getActiveItem(item.href),
-              },
-              'text-nowrap',
-            )}
-            href={`/${lang}/${item.href}`}
-          >
-            {item.name}
-          </Link>
-        ))}
-      </div>
-    </>
+    <div className="top-navigation">
+      {menuItems.map((item) => (
+        <Link
+          key={item.href}
+          className={clsx(
+            {
+              'text-blue-600': getActiveItem(item.href),
+            },
+            'text-nowrap',
+          )}
+          href={`/${lang}/${item.href}`}
+        >
+          {item.name}
+        </Link>
+      ))}
+    </div>
   );
 }

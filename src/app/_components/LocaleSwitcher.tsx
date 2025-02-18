@@ -2,6 +2,7 @@
 
 import { useParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export default function LocaleSwitcher() {
   const params = useParams();
@@ -18,7 +19,11 @@ export default function LocaleSwitcher() {
       aria-label={`Switch to ${newLang}`}
       onClick={handleLocaleSwitch}
     >
-      {params.lang === 'en' ? '🇩🇪' : '🇬🇧'}
+      {params.lang === 'en' ? (
+        <Image src="/german-flag.jpg" height="25" width="25" alt="german-flag" />
+      ) : (
+        <Image src="/british-flag.jpg" height="25" width="25" alt="british-flag" />
+      )}
     </Button>
   );
 }

@@ -1,5 +1,3 @@
-export const HEADER_HEIGHT = 4;
-
 export type JobExperience = {
   id: string;
   title: string;
@@ -41,20 +39,20 @@ export const JOB_EXPERIENCE: Array<JobExperience> = [
       en: [
         'Developed components for managing charts on the collections page for gfknewron using React, Express.js, Node.js, and PostgreSQL.',
         'Managed UI state between microfrontends, ensuring seamless integration and improved user experience.',
-        'Successfully collaborated as part of data platform for the launch of various projects that involved both front-end applications and back-end servers',
-        'Developed 4+ web applications by using responsive UI elements and shadcn/ui components library via React concepts for smooth performance',
-        'Build user interfaces of web applications with React.js and JavaScript based on the approved designs',
-        'Analyzed user requirements and developed 50+ responsive and functional UI components via React concepts',
-        'Work with various teams to setup and conduct Sharable Components Library',
+        'Successfully collaborated as part of data platform for the launch of various projects that involved both front-end applications and back-end servers.',
+        'Developed 4+ web applications by using responsive UI elements and shadcn/ui components library via React concepts for smooth performance.',
+        'Build user interfaces of web applications with React.js and JavaScript based on the approved designs.',
+        'Analyzed user requirements and developed 50+ responsive and functional UI components via React concepts.',
+        'Work with various teams to setup and conduct Sharable Components Library.',
       ],
       de: [
-        'Entwickelte Komponenten zur Verwaltung von Diagrammen auf der Sammlungsseite für gfknewron unter Verwendung von React, Express.js, Node.js und PostgreSQL.',
-        'Verwalteter UI-Zustand zwischen Microfrontends, um eine nahtlose Integration und eine verbesserte Benutzererfahrung zu gewährleisten.',
-        'Erfolgreich als Teil der Datenplattform zusammengearbeitet für den Start verschiedener Projekte, die sowohl Front-End-Anwendungen als auch Back-End-Server umfassten',
-        'Entwickelte 4+ Webanwendungen, indem responsive UI-Elemente und shadcn/ui-Komponentenbibliothek über React-Konzepte für eine reibungslose Leistung verwendet wurden',
-        'Erstellen Sie Benutzeroberflächen von Webanwendungen mit React.js und JavaScript basierend auf den genehmigten Designs',
-        'Analysierte Benutzeranforderungen und entwickelte 50+ responsive und funktionale UI-Komponenten über React-Konzepte',
-        'Arbeiten Sie mit verschiedenen Teams zusammen, um eine Sharable Components Library einzurichten und durch zu führen',
+        'Entwicklung der Komponenten zur Verwaltung von Diagrammen auf der Sammlungsseite für gfknewron unter Verwendung von React, Express.js, Node.js und PostgreSQL.',
+        'Verwaltung des UI-Zustandes zwischen Microfrontends, um eine nahtlose Integration und eine verbesserte Benutzererfahrung zu gewährleisten.',
+        'Als Teil der Datenplattform verantwortlich für den Start verschiedener Projekte, die sowohl Front-End-Anwendungen als auch Back-End-Server umfassten.',
+        'Entwicklung des 4+ Webanwendungen, in dem responsive UI-Elemente und shadcn/ui-Komponentenbibliothek über React-Konzepte für eine reibungslose Leistung verwendet wurden.',
+        'Erstellung der Benutzeroberflächen von Webanwendungen mit React.js und JavaScript, basierend auf den genehmigten Designs.',
+        'Analyse der Benutzeranforderungen und Entwicklung von 50+ responsiven und funktionalen UI-Komponenten über React-Konzepte.',
+        'Arbeitet mit verschiedenen Teams zusammen, um eine Sharable Components Library einzurichten und durch zu führen',
       ],
     },
     projects: [

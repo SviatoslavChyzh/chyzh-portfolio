@@ -2,12 +2,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Separator } from '@/components/ui/separator';
 import { Github, Linkedin } from 'lucide-react';
 import ContactForm from '@/app/_components/ContactForm';
+import type { CSSProperties } from 'react';
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[radial-gradient(hsl(0,72%,65%,40%),hsl(24,62%,73%,40%),hsl(var(--background))_90%)] py-10"
+      className="bg-[radial-gradient(hsl(0,72%,65%,40%),hsl(24,62%,73%,40%),hsl(var(--background))_90%)] py-16"
+      style={{ '--vt-name': '--contact' } as CSSProperties}
     >
       <div className="container grid gap-4 lg:grid-cols-auto-fit-100">
         <Card>

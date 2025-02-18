@@ -15,6 +15,7 @@ export default async function NavBar({ lang }: { lang: Locale }) {
 
   return (
     <header className="fixed top-0 z-10 flex h-[96px] w-full border-b border-white/10 shadow-xl backdrop-blur-lg">
+      <div className="scroll-watcher"></div>
       <nav className="container flex items-center justify-between px-8 font-semibold">
         <Link href={`/${lang}`} className="flex items-center gap-4">
           <Avatar>
@@ -25,7 +26,7 @@ export default async function NavBar({ lang }: { lang: Locale }) {
             Sviatoslav Chyzh
           </span>
         </Link>
-        <div className="top-navigation hidden lg:flex">
+        <div className="hidden lg:flex">
           <NavLinks menuItems={menuItems} lang={lang} />
         </div>
         <div className="flex gap-4">
