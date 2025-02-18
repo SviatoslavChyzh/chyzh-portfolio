@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { ContactFormType } from '@/app/_components/ContactForm';
 
+export const runtime = 'edge';
+
 const emailAddr = process.env.EMAIL_ADDRESS;
 
 export async function POST(request: Request) {
