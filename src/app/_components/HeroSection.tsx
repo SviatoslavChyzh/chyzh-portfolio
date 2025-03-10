@@ -1,7 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { SKILLS } from '@/app/constants';
+import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import type { Locale } from '@/app/types';
 import { getDictionary } from '@/app/[lang]/dictionaries';
@@ -10,13 +8,14 @@ import DownloadResumeButton from '@/app/_components/DownloadResumeButton';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import Skills from '@/app/_components/Skills';
 
 export default async function HeroSection({ lang }: { lang: Locale }) {
   const { heroSection } = await getDictionary(lang);
 
   return (
     <section
-      className="relative grid min-h-screen items-center overflow-x-clip"
+      className="relative mt-20 grid min-h-screen items-center overflow-x-clip"
       id="intro"
       style={{ '--vt-name': '--intro' } as CSSProperties}
     >
@@ -28,7 +27,7 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
                 Available for hire
               </div>
               <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
-                Hi, I'm Sviatoslav Chyzh
+                Hi, I am Sviatoslav Chyzh
               </h1>
               <p className="text-xl text-muted-foreground">
                 A software engineer with a passion for building web applications
@@ -44,7 +43,7 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
                 </Link>
               </Button>
               <Button className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl">
-                <Link href="#skills" className="inline-flex gap-2">
+                <Link href="#experience" className="inline-flex gap-2">
                   Learn More
                   <ArrowDown className="h-4 w-4" />
                 </Link>
@@ -71,46 +70,7 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
           </Avatar>
         </div>
       </div>
-      {/*<div className="container mt-40 grid gap-6 md:mt-0 lg:mt-0 lg:grid-cols-auto-fit-100">*/}
-      {/*  <Card className="bg-transparent">*/}
-      {/*    <CardHeader className="text-nowrap text-3xl">*/}
-      {/*      <CardTitle className="flex items-center gap-6">*/}
-      {/*        <Avatar className="h-20 w-20">*/}
-      {/*          <AvatarImage src="/avatar.jpeg" alt="SC" />*/}
-      {/*          <AvatarFallback>SC</AvatarFallback>*/}
-      {/*        </Avatar>*/}
-      {/*        <div className="flex flex-wrap gap-4">*/}
-      {/*          <span className="font-mono font-thin text-accent">*/}
-      {/*            {lang === 'en' ? 'I am,' : 'Ich bin,'}*/}
-      {/*          </span>*/}
-      {/*          <span>Sviatoslav Chyzh</span>*/}
-      {/*        </div>*/}
-      {/*      </CardTitle>*/}
-      {/*    </CardHeader>*/}
-      {/*    <CardContent className="text-start text-xl text-muted-foreground">*/}
-      {/*      {heroSection}*/}
-      {/*    </CardContent>*/}
-      {/*    <CardFooter>*/}
-      {/*      <DownloadResumeButton />*/}
-      {/*    </CardFooter>*/}
-      {/*  </Card>*/}
-      {/*  <Card className="bg-transparent">*/}
-      {/*    <CardHeader className="text-3xl">*/}
-      {/*      <CardTitle className="flex items-center gap-6">👨‍💻 Skills</CardTitle>*/}
-      {/*    </CardHeader>*/}
-      {/*    <CardContent>*/}
-      {/*      {SKILLS.map((skill) => (*/}
-      {/*        <Badge*/}
-      {/*          key={skill}*/}
-      {/*          className="m-1 rounded-lg p-3 text-muted-foreground transition-all hover:scale-110 hover:cursor-pointer"*/}
-      {/*          variant="secondary"*/}
-      {/*        >*/}
-      {/*          {skill}*/}
-      {/*        </Badge>*/}
-      {/*      ))}*/}
-      {/*    </CardContent>*/}
-      {/*  </Card>*/}
-      {/*</div>*/}
+      <Skills />
       <Image fill className="header-image" src="/city-at-night.jpeg" alt="header-image" />
     </section>
   );

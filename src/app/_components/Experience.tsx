@@ -14,11 +14,11 @@ export default function Experience({ lang }: { lang: Locale }) {
     >
       <div className="container py-20">
         <h2 className="p-8 text-3xl text-blue-600">💼 Work Experience</h2>
-        <div className="grid gap-4 lg:grid-cols-auto-fit-100">
+        <div className="grid gap-4">
           {JOB_EXPERIENCE.map((job) => (
             <Card
               key={job.id}
-              className="transition hover:scale-[1.01] hover:cursor-pointer hover:bg-secondary hover:shadow-2xl lg:p-8"
+              className="transition hover:cursor-pointer hover:bg-secondary hover:shadow-2xl lg:p-8"
             >
               <CardHeader>
                 <CardDescription className="text-primary">

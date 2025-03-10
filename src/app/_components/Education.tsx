@@ -15,7 +15,7 @@ export default function Education() {
           {EDUCATION.map((job) => (
             <Card
               key={job.id}
-              className="mx-8 p-8 py-16 hover:bg-primary-foreground hover:shadow-2xl"
+              className="mx-8 p-4 py-16 hover:bg-primary-foreground hover:shadow-2xl"
             >
               <CardHeader>
                 <CardDescription className="text-primary">
