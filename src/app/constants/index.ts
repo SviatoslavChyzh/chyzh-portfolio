@@ -92,7 +92,7 @@ export const JOB_EXPERIENCE: Array<JobExperience> = [
         'Development web application PortalTOE for adding data of employees, using ASP.NET Core on backend and HTML, CSS, JQuery, AngularJS on frontend.',
       ],
       de: [
-        'Entwickler. Unterstützung der Abrechnungssoftware „SunFlower“. Einrichten von Servern, Datenbanken, Entwicklung von Client- und Serverseite. Unterstützung des Programms zur Erfassung und Abwicklung von Vertragsverletzungen. Unterstützung des Programms zur Erfassung und Abwicklung von Elektrozählern.',
+        'Unterstützung der Abrechnungssoftware „SunFlower“: Einrichtung von Servern und Datenbanken, Entwicklung von Client- und Server-Seite.',
         'Wartung (Entwicklung und Administration) des bestehenden Abrechnungssystems „SunFlower“. Unterstützung des Systems, Entwicklung neuer Funktionen, Änderung von Geschäftsregeln (gespeicherte Prozeduren MS SQL). Microsoft Visual Studio 2017, C# wurde zur Entwicklung der Benutzeroberfläche verwendet.',
         'Entwicklung der Webanwendung PortalTOE zur Erfassung von Mitarbeiterdaten unter Verwendung von ASP.NET Core auf der Backend- und HTML-, CSS-, JQuery-, AngularJS-Technologien auf der Frontend-Seite.',
       ],

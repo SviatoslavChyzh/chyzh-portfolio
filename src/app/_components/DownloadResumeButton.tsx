@@ -17,8 +17,8 @@ export default function DownloadResumeButton() {
   };
 
   return (
-    <Button onClick={handleDownload} className="m-auto">
-      <Download className="mr-2 h-4 w-4" />
+    <Button onClick={handleDownload}>
+      <Download className="h-4 w-4" />
       <Link href="/sviatoslav-chyzh-resume.pdf" target="_blank">
         Download Resume
       </Link>

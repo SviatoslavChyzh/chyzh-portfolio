@@ -5,7 +5,7 @@ import type { CSSProperties } from 'react';
 export default function Education() {
   return (
     <section
-      className="bg-secondary"
+      className="relative overflow-hidden bg-gradient-to-br from-blue-300 to-indigo-200 dark:from-gray-900 dark:to-indigo-900"
       id="education"
       style={{ '--vt-name': '--education' } as CSSProperties}
     >
@@ -15,7 +15,7 @@ export default function Education() {
           {EDUCATION.map((job) => (
             <Card
               key={job.id}
-              className="mx-8 p-8 py-16 hover:bg-primary-foreground hover:shadow-lg"
+              className="mx-8 p-8 py-16 hover:bg-primary-foreground hover:shadow-2xl"
             >
               <CardHeader>
                 <CardDescription className="text-primary">
