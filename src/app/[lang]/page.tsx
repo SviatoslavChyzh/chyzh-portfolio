@@ -3,6 +3,7 @@ import Experience from '@/app/_components/Experience';
 import type { Locale } from '@/app/types';
 import Education from '@/app/_components/Education';
 import Contact from '@/app/_components/Contact';
+import Skills from '@/app/_components/Skills';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'edge';
@@ -16,6 +17,7 @@ export default async function Home({
   return (
     <main>
       <HeroSection lang={lang} />
+      <Skills />
       <Experience lang={lang} />
       <Education />
       <Contact />

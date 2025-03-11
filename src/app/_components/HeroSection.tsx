@@ -8,7 +8,6 @@ import DownloadResumeButton from '@/app/_components/DownloadResumeButton';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import Skills from '@/app/_components/Skills';
 
 export default async function HeroSection({ lang }: { lang: Locale }) {
   const { heroSection } = await getDictionary(lang);
@@ -42,12 +41,12 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
                   Contact Me
                 </Link>
               </Button>
-              <Button className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl">
-                <Link href="#experience" className="inline-flex gap-2">
+              <Link href="#skills" className="inline-flex gap-2">
+                <Button className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl">
                   Learn More
                   <ArrowDown className="h-4 w-4" />
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </div>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon" asChild>
@@ -70,7 +69,6 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
           </Avatar>
         </div>
       </div>
-      <Skills />
       <Image fill className="header-image" src="/city-at-night.jpeg" alt="header-image" />
     </section>
   );
