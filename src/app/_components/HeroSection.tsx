@@ -50,12 +50,12 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
             </div>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon" asChild>
-                <Link href="#" aria-label="GitHub">
+                <Link href="https://github.com/SviatoslavChyzh" target="_blank" aria-label="GitHub">
                   <Github className="h-5 w-5" />
                 </Link>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <Link href="#" aria-label="LinkedIn">
+                <Link href="https://www.linkedin.com/in/sviatoslav-chyzh" target="_blank" aria-label="LinkedIn">
                   <Linkedin className="h-5 w-5" />
                 </Link>
               </Button>
@@ -69,7 +69,7 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
           </Avatar>
         </div>
       </div>
-      <Image fill className="header-image" src="/city-at-night.jpeg" alt="header-image" />
+      <Image fill className="header-image" src="/city-at-night.jpeg" alt="header-image" sizes="(max-width: 768px) 100vw, 50vw" />
     </section>
   );
 }

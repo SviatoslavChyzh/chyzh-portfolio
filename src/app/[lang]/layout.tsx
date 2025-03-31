@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Sviatoslav Chyzh | Full Stack Software Engineer',
+  title: 'Sviatoslav Chyzh | Frontend Software Engineer',
   description:
-    'Portfolio of Sviatoslav Chyzh, a full stack software engineer specializing in TypeScript and React. Explore my projects and experience.',
+    'Portfolio of Sviatoslav Chyzh, a frontend software engineer specializing in TypeScript and React. Explore my projects and experience.',
 };
 
 export default async function RootLayout({

@@ -3,6 +3,7 @@ import { Separator } from '@/components/ui/separator';
 import { Github, Linkedin } from 'lucide-react';
 import ContactForm from '@/app/_components/ContactForm';
 import type { CSSProperties } from 'react';
+import Link from 'next/link';
 
 export default function Contact() {
   return (
@@ -24,22 +25,12 @@ export default function Contact() {
           </CardHeader>
           <CardContent>
             <div className="flex w-full justify-center gap-4">
-              <a
-                href="https://www.linkedin.com/in/sviatoslav-chyzh-852113176/"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-lg border-2 border-primary p-2 hover:border-accent-foreground hover:bg-accent"
-              >
-                <Linkedin />
-              </a>
-              <a
-                href="https://github.com/SviatoslavChyzh"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-lg border-2 border-primary p-2 hover:border-accent-foreground hover:bg-accent"
-              >
-                <Github />
-              </a>
+              <Link href="https://www.linkedin.com/in/sviatoslav-chyzh" aria-label="LinkedIn">
+                <Linkedin className="h-5 w-5" />
+              </Link>
+              <Link href="https://github.com/SviatoslavChyzh" aria-label="GitHub">
+                <Github className="h-5 w-5" />
+              </Link>
             </div>
           </CardContent>
         </Card>
