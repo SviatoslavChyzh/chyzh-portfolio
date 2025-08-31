@@ -2,15 +2,15 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import type { Locale } from '@/app/types';
-import { getDictionary } from '@/app/[lang]/dictionaries';
 import type { CSSProperties } from 'react';
 import DownloadResumeButton from '@/app/_components/DownloadResumeButton';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 
 export default async function HeroSection({ lang }: { lang: Locale }) {
-  const { heroSection } = await getDictionary(lang);
+  const t = await getTranslations();
 
   return (
     <section
@@ -32,7 +32,7 @@ export default async function HeroSection({ lang }: { lang: Locale }) {
                 A software engineer with a passion for building web applications
               </p>
             </div>
-            <p className="text-muted-foreground">{heroSection}</p>
+            <p className="text-muted-foreground">{t('heroSection')}</p>
             <div className="flex flex-wrap gap-3">
               <DownloadResumeButton />
               <Button variant="outline" asChild>
