@@ -1,7 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
-import type { Locale } from '@/app/types';
 import type { CSSProperties } from 'react';
 import DownloadResumeButton from '@/app/_components/DownloadResumeButton';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,7 @@ import Link from 'next/link';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
-export default async function HeroSection({ lang }: { lang: Locale }) {
+export default async function HeroSection() {
   const t = await getTranslations();
 
   return (

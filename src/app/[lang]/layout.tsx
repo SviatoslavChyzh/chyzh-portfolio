@@ -2,14 +2,13 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import '../globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
-import type { PropsWithChildren } from 'react';
-import type { Locale } from '@/app/types';
+import type { ReactNode } from 'react';
 import NavBar from '@/app/_components/NavBar';
 import { Toaster } from '@/components/ui/toaster';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
-import notFound from './not-found';
+import { notFound } from 'next/navigation';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,8 +29,11 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
   params,
-}: PropsWithChildren<{ params: Promise<{ lang: Locale }> }>) {
-  const lang = (await params).lang;
+}: Readonly<{
+  children: ReactNode;
+  params: Promise<{ lang: string }>;
+}>) {
+  const { lang } = await params;
 
   if (!hasLocale(routing.locales, lang)) {
     notFound();
