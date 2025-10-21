@@ -34,7 +34,7 @@ export default function NavLinks({
             },
             'text-nowrap',
           )}
-          href={`/${lang}/${item.href}`}
+          href={`/${lang}${item.href}`}
         >
           {item.name}
         </Link>

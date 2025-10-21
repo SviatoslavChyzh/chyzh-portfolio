@@ -10,13 +10,10 @@ export default function Education() {
       style={{ '--vt-name': '--education' } as CSSProperties}
     >
       <div className="container py-20">
-        <h2 className="p-8 text-3xl text-blue-600">🏫 Education</h2>
-        <div className="grid gap-4 lg:grid-cols-auto-fit-100">
+        <h2 className="p-8 text-3xl">🏫 Education</h2>
+        <div className="lg:grid-cols-auto-fit-100 grid gap-4">
           {EDUCATION.map((job) => (
-            <Card
-              key={job.id}
-              className="mx-8 p-4 py-16 hover:bg-primary-foreground hover:shadow-2xl"
-            >
+            <Card key={job.id} className="hover:bg-secondary mx-8 p-4 py-16 hover:shadow-2xl">
               <CardHeader>
                 <CardDescription className="text-primary">
                   🗓️ {job.startDate} - {job.endDate}

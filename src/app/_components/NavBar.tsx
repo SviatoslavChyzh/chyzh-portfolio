@@ -29,7 +29,7 @@ export default async function NavBar({ lang }: { lang: Locale }) {
             <AvatarImage src="/logo.png" alt="SC" />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
-          <span className="hidden text-gray-800 dark:text-white lg:block lg:text-2xl lg:font-bold">
+          <span className="hidden text-gray-800 lg:block lg:text-2xl lg:font-bold dark:text-white">
             Sviatoslav Chyzh
           </span>
         </Link>

@@ -44,7 +44,7 @@ export default function MobileMenu({ menuItems, lang, menuTitle }: MobileMenuPro
               <SheetClose key={item.href} asChild>
                 <Link
                   className="hover:bg-primary px-4 leading-10 hover:cursor-pointer hover:text-white hover:shadow-[inset_0_-3px_0_0_hsl(var(--accent))]"
-                  href={`/${lang}/${item.href}`}
+                  href={`/${lang}${item.href}`}
                 >
                   {item.name}
                 </Link>
