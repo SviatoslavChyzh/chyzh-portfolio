@@ -89,17 +89,17 @@ export default async function HeroSection() {
               <AvatarFallback className="text-6xl">SC</AvatarFallback>
             </Avatar>
 
-            <div className="glass animate-float absolute -top-4 -right-4 flex h-12 w-12 items-center justify-center rounded-xl">
+            <div className="animate-float absolute -top-4 -right-4 flex h-12 w-12 items-center justify-center rounded-xl">
               <span className="text-2xl">⚛️</span>
             </div>
             <div
-              className="glass animate-float absolute -bottom-4 -left-4 flex h-12 w-12 items-center justify-center rounded-xl"
+              className="animate-float absolute -bottom-4 -left-4 flex h-12 w-12 items-center justify-center rounded-xl"
               style={{ animationDelay: '2s' }}
             >
               <span className="text-2xl">🔧</span>
             </div>
             <div
-              className="glass animate-float absolute top-1/2 -right-8 flex h-10 w-10 items-center justify-center rounded-xl"
+              className="animate-float absolute top-1/2 -right-8 flex h-10 w-10 items-center justify-center rounded-xl"
               style={{ animationDelay: '1s' }}
             >
               <span className="text-xl">💻</span>

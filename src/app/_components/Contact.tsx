@@ -34,7 +34,22 @@ export default function Contact() {
               </Link>
             </div>
             <Separator />
-            <Image src="/exported_qrcode_image.svg" alt="phone" width={300} height={300} />
+            <div className="flex items-center gap-8">
+              <Image
+                src="/main-logo.png"
+                alt="main-logo"
+                width={270}
+                height={270}
+                className="border-primary rounded-xl border-2"
+              />
+              <Image
+                src="/exported_qrcode_image.svg"
+                alt="phone"
+                width={300}
+                height={300}
+                className="border-primary rounded-xl border-2"
+              />
+            </div>
           </CardContent>
         </Card>
         <Card>
