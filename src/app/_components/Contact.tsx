@@ -34,7 +34,7 @@ export default function Contact() {
               </Link>
             </div>
             <Separator />
-            <div className="flex items-center gap-8">
+            <div className="flex flex-wrap items-center justify-center gap-8">
               <Image
                 src="/main-logo.png"
                 alt="main-logo"

@@ -27,7 +27,7 @@ export default function Experience({ lang }: { lang: Locale }) {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <Card className="transition hover:cursor-pointer hover:bg-secondary hover:shadow-2xl lg:p-8">
+              <Card className="hover:bg-secondary transition hover:cursor-pointer hover:shadow-2xl lg:p-8">
                 <CardHeader>
                   <CardTitle>
                     <div className="flex flex-col gap-4">
@@ -35,7 +35,9 @@ export default function Experience({ lang }: { lang: Locale }) {
                         <Briefcase className="mr-2 h-5 w-5" />
                         {job.title}
                       </div>
-                      <span className="uppercase text-accent">{job.company}</span>
+                      <span className="text-secondary-foreground dark:text-accent uppercase">
+                        {job.company}
+                      </span>
                     </div>
                   </CardTitle>
                   <CardDescription className="flex items-center gap-y-2 text-lg">
@@ -64,7 +66,7 @@ export default function Experience({ lang }: { lang: Locale }) {
                             {project.link ? (
                               <Link
                                 className="underline hover:text-white"
-                                href={project.link as string}
+                                href={`/${project.link}`}
                                 key={index}
                                 target="_blank"
                               >
