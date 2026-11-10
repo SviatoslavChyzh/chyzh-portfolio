@@ -428,4 +428,4 @@ export const PROJECTS: Project[] = [
 ];
 
 /** Projects shown in the teaser on the home page. */
-export const FEATURED_PROJECT_SLUGS = ['ugkk-nuernberg', 'timebox', 'leather-lab'];
+export const FEATURED_PROJECT_SLUGS = ['leather-lab', 'timebox', 'keylab'];
