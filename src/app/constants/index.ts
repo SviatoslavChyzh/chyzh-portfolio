@@ -286,34 +286,6 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    slug: 'ugkk-nuernberg',
-    name: { en: 'UGKK Nürnberg', de: 'UGKK Nürnberg' },
-    url: 'https://ugkk-nuernberg.com/',
-    displayUrl: 'ugkk-nuernberg.com',
-    image: '/projects/ugkk-nuernberg.jpg',
-    year: '2026',
-    kind: { en: 'Parish website with admin dashboard', de: 'Gemeinde-Website mit Admin-Bereich' },
-    description: {
-      en: 'Website of the Ukrainian Greek Catholic parish of St. Nicholas in Nuremberg. Parishioners in Nuremberg, Erlangen, Fürth and Bamberg find service times, news and contacts, and the parish team maintains all content itself in an admin dashboard.',
-      de: 'Website der ukrainischen griechisch-katholischen Personalpfarrei St. Nikolaus in Nürnberg. Gemeindemitglieder in Nürnberg, Erlangen, Fürth und Bamberg finden Gottesdienstzeiten, Neuigkeiten und Kontakte, und das Gemeindeteam pflegt alle Inhalte selbst im Admin-Bereich.',
-    },
-    highlights: {
-      en: [
-        'Monthly service schedule per city, with holidays, notes and events',
-        'News articles, a parish directory and photo uploads via Convex file storage',
-        'Admin dashboard with role-based access for articles, schedules, parishes and users',
-        'Ukrainian and German, with hreflang, JSON-LD and Open Graph metadata',
-      ],
-      de: [
-        'Monatlicher Gottesdienstplan pro Stadt mit Feiertagen, Hinweisen und Veranstaltungen',
-        'News-Artikel, Gemeindeverzeichnis und Foto-Uploads über den Convex-Dateispeicher',
-        'Admin-Bereich mit rollenbasiertem Zugriff für Artikel, Pläne, Gemeinden und Benutzer',
-        'Ukrainisch und Deutsch, inklusive hreflang, JSON-LD und Open-Graph-Metadaten',
-      ],
-    },
-    stack: ['TanStack Start', 'Convex', 'React 19', 'TanStack Query', 'Tailwind CSS', 'shadcn/ui'],
-  },
-  {
     slug: 'leather-lab',
     name: { en: 'Leather Lab', de: 'Leather Lab' },
     url: 'https://leatherlabusa.com/',
@@ -340,6 +312,34 @@ export const PROJECTS: Project[] = [
       ],
     },
     stack: ['TanStack Start', 'React 19', 'Vite', 'Tailwind CSS', 'shadcn/ui', 'Turborepo'],
+  },
+  {
+    slug: 'ugkk-nuernberg',
+    name: { en: 'UGKK Nürnberg', de: 'UGKK Nürnberg' },
+    url: 'https://ugkk-nuernberg.com/',
+    displayUrl: 'ugkk-nuernberg.com',
+    image: '/projects/ugkk-nuernberg.jpg',
+    year: '2026',
+    kind: { en: 'Parish website with admin dashboard', de: 'Gemeinde-Website mit Admin-Bereich' },
+    description: {
+      en: 'Website of the Ukrainian Greek Catholic parish of St. Nicholas in Nuremberg. Parishioners in Nuremberg, Erlangen, Fürth and Bamberg find service times, news and contacts, and the parish team maintains all content itself in an admin dashboard.',
+      de: 'Website der ukrainischen griechisch-katholischen Personalpfarrei St. Nikolaus in Nürnberg. Gemeindemitglieder in Nürnberg, Erlangen, Fürth und Bamberg finden Gottesdienstzeiten, Neuigkeiten und Kontakte, und das Gemeindeteam pflegt alle Inhalte selbst im Admin-Bereich.',
+    },
+    highlights: {
+      en: [
+        'Monthly service schedule per city, with holidays, notes and events',
+        'News articles, a parish directory and photo uploads via Convex file storage',
+        'Admin dashboard with role-based access for articles, schedules, parishes and users',
+        'Ukrainian and German, with hreflang, JSON-LD and Open Graph metadata',
+      ],
+      de: [
+        'Monatlicher Gottesdienstplan pro Stadt mit Feiertagen, Hinweisen und Veranstaltungen',
+        'News-Artikel, Gemeindeverzeichnis und Foto-Uploads über den Convex-Dateispeicher',
+        'Admin-Bereich mit rollenbasiertem Zugriff für Artikel, Pläne, Gemeinden und Benutzer',
+        'Ukrainisch und Deutsch, inklusive hreflang, JSON-LD und Open-Graph-Metadaten',
+      ],
+    },
+    stack: ['TanStack Start', 'Convex', 'React 19', 'TanStack Query', 'Tailwind CSS', 'shadcn/ui'],
   },
   {
     slug: 'keylab',
