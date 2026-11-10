@@ -1,130 +1,126 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight, Download, Mail } from 'lucide-react';
 import Image from 'next/image';
-import type { CSSProperties } from 'react';
-import DownloadResumeButton from '@/app/_components/DownloadResumeButton';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { ArrowDown, ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { sectionTimeline } from '@/app/_components/nav';
+import { SITE } from '@/app/constants';
+import { GithubIcon, LinkedinIcon } from '@/components/icons';
+import { Button } from '@/components/ui/button';
+import { Link } from '@/i18n/navigation';
 
 export default async function HeroSection() {
-  const t = await getTranslations();
+  const t = await getTranslations('hero');
+  const tCommon = await getTranslations('common');
+  const newTab = `(${tCommon('opensInNewTab')})`;
 
   return (
     <section
-      className="relative mt-20 grid min-h-screen items-center overflow-x-clip"
       id="intro"
-      style={{ '--vt-name': '--intro' } as CSSProperties}
+      aria-labelledby="intro-heading"
+      className="relative isolate overflow-hidden pt-(--header-height)"
+      style={sectionTimeline('intro')}
     >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div
-          className="bg-primary/30 animate-float absolute top-1/4 left-1/4 h-4 w-4 rounded-full"
-          style={{ animationDelay: '0s' }}
-        />
-        <div
-          className="bg-primary/20 animate-float absolute top-1/5 right-1/4 h-6 w-6 rounded-full"
-          style={{ animationDelay: '2s' }}
-        />
-        <div
-          className="bg-primary/40 animate-float absolute bottom-1/3 left-1/3 h-3 w-3 rounded-full"
-          style={{ animationDelay: '4s' }}
-        />
-      </div>
-      <div className="container grid w-full items-center justify-center gap-8 md:grid-cols-[2fr_1fr]">
-        <Card className="border-none p-8 shadow-none">
-          <CardContent className="space-y-6 p-0">
-            <div className="space-y-2">
-              <div className="bg-primary/10 border-primary/20 text-primary-light inline-flex items-center rounded-full border px-3 py-1 text-sm">
-                ✨ Available for hire
-              </div>
-              <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
-                Hi, I am Sviatoslav Chyzh
-              </h1>
-              <p className="text-foreground text-xl">
-                A software engineer with a passion for building{' '}
-                <span className="text-secondary-foreground font-medium">web applications</span>
-              </p>
-            </div>
-            <p className="text-foreground">{t('heroSection')}</p>
-            <div className="flex flex-wrap gap-3">
-              <DownloadResumeButton />
-              <Button variant="outline" asChild>
-                <Link href="#contact">
-                  <Mail className="h-4 w-4" />
-                  Contact Me
-                </Link>
-              </Button>
-              <Link href="#skills" className="inline-flex gap-2">
-                <Button className="rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl">
-                  Learn More
-                  <ArrowDown className="h-4 w-4" />
-                </Button>
+      {/* Decorative skyline, only where there is room next to the text. */}
+      <Image
+        src="/city-at-night.jpeg"
+        alt=""
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="hero-backdrop hidden md:block"
+      />
+
+      <div className="shell grid items-center gap-10 py-14 sm:py-20 md:min-h-[calc(100svh-var(--header-height))] md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] md:gap-12">
+        <div className="space-y-6">
+          <p className="bg-card inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm font-medium shadow-xs">
+            <span className="bg-success size-2 rounded-full" aria-hidden="true" />
+            {t('availability')}
+          </p>
+
+          <div className="space-y-4">
+            <h1
+              id="intro-heading"
+              className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+            >
+              {t('title')}
+            </h1>
+            <p className="text-muted-foreground text-xl text-balance sm:text-2xl">
+              {t.rich('subtitle', {
+                highlight: (chunks) => <span className="text-primary font-semibold">{chunks}</span>,
+              })}
+            </p>
+          </div>
+
+          <p className="max-w-xl text-base leading-relaxed text-pretty sm:text-lg">
+            {t('description')}
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            <Button asChild size="lg">
+              <Link href="/projects">
+                {t('viewProjects')}
+                <ArrowRight aria-hidden="true" />
               </Link>
-            </div>
-            <div className="flex gap-4">
-              <Button variant="outline" size="icon" asChild>
-                <Link href="https://github.com/SviatoslavChyzh" target="_blank" aria-label="GitHub">
-                  <Github className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
-                <Link
-                  href="https://www.linkedin.com/in/sviatoslav-chyzh"
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <a href={SITE.resume} download>
+                <Download aria-hidden="true" />
+                {t('downloadResume')}
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <a href="#contact">
+                <Mail aria-hidden="true" />
+                {t('contact')}
+              </a>
+            </Button>
+          </div>
+
+          <ul aria-label={t('socialLabel')} className="flex gap-2">
+            <li>
+              <Button asChild variant="ghost" size="icon">
+                <a
+                  href={SITE.github}
                   target="_blank"
-                  aria-label="LinkedIn"
+                  rel="noreferrer"
+                  aria-label={`${t('github')} ${newTab}`}
+                  title={t('github')}
                 >
-                  <Linkedin className="h-5 w-5" />
-                </Link>
+                  <GithubIcon className="size-5!" />
+                </a>
               </Button>
-            </div>
-          </CardContent>
-        </Card>
-        <div className="animate-slide-up flex justify-center">
-          <div className="relative">
-            <div className="gradient-primary absolute -inset-4 rounded-full opacity-30 blur-xl" />
-
-            <Avatar className="border-primary/20 h-80 w-80 border-4 shadow-2xl">
-              <AvatarImage src="/avatar.jpeg" alt="Sviatoslav Chyzh" />
-              <AvatarFallback className="text-6xl">SC</AvatarFallback>
-            </Avatar>
-
-            <div className="animate-float absolute -top-4 -right-4 flex h-12 w-12 items-center justify-center rounded-xl">
-              <span className="text-2xl">⚛️</span>
-            </div>
-            <div
-              className="animate-float absolute -bottom-4 -left-4 flex h-12 w-12 items-center justify-center rounded-xl"
-              style={{ animationDelay: '2s' }}
-            >
-              <span className="text-2xl">🔧</span>
-            </div>
-            <div
-              className="animate-float absolute top-1/2 -right-8 flex h-10 w-10 items-center justify-center rounded-xl"
-              style={{ animationDelay: '1s' }}
-            >
-              <span className="text-xl">💻</span>
-            </div>
-          </div>
-          <div className="absolute bottom-24 left-1/2 -translate-x-1/2 transform animate-bounce">
-            <Link href="#skills">
-              <Button
-                variant="ghost"
-                aria-label="Scroll Down"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <ChevronDown size={32} />
+            </li>
+            <li>
+              <Button asChild variant="ghost" size="icon">
+                <a
+                  href={SITE.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${t('linkedin')} ${newTab}`}
+                  title={t('linkedin')}
+                >
+                  <LinkedinIcon className="size-5!" />
+                </a>
               </Button>
-            </Link>
-          </div>
+            </li>
+          </ul>
+        </div>
+
+        <div className="relative order-first mx-auto w-40 sm:w-52 md:order-last md:w-full md:max-w-xs">
+          <div
+            className="bg-primary/35 absolute -inset-6 -z-10 rounded-full blur-3xl"
+            aria-hidden="true"
+          />
+          <Image
+            src="/avatar.jpeg"
+            alt={t('avatarAlt')}
+            width={640}
+            height={640}
+            sizes="(max-width: 640px) 160px, (max-width: 768px) 208px, 320px"
+            loading="eager"
+            fetchPriority="high"
+            className="border-card aspect-square w-full rounded-full border-4 object-cover shadow-lg"
+          />
         </div>
       </div>
-      <Image
-        fill
-        className="header-image"
-        src="/city-at-night.jpeg"
-        alt="header-image"
-        sizes="(max-width: 768px) 100vw, 50vw"
-      />
     </section>
   );
 }

@@ -1,44 +1,32 @@
 'use client';
 
+import type { Route } from 'next';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { clsx } from 'clsx';
+import type { NavItem } from '@/app/_components/nav';
+import { usePathname } from '@/i18n/navigation';
 
-export default function NavLinks({
-  menuItems,
-  lang,
-}: {
-  menuItems: { name: string; href: string }[];
-  lang: string;
-}) {
-  const pathName = usePathname();
-
-  function getActiveItem(href: string) {
-    const path = pathName.split('/').filter((item) => item !== lang && item !== '');
-
-    if (path.length === 0) {
-      return href === '';
-    }
-
-    return path.includes(href);
-  }
+/**
+ * Desktop navigation. The link of the section currently on screen is highlighted
+ * purely in CSS (`.top-navigation` in globals.css); `aria-current` marks the
+ * link of the page you are on.
+ */
+export default function NavLinks({ items }: { items: NavItem[] }) {
+  const pathname = usePathname();
 
   return (
-    <div className="top-navigation">
-      {menuItems.map((item) => (
-        <Link
-          key={item.href}
-          className={clsx(
-            {
-              'text-blue-600': getActiveItem(item.href),
-            },
-            'text-nowrap',
-          )}
-          href={`/${lang}${item.href}`}
-        >
-          {item.name}
-        </Link>
+    <ul className="top-navigation flex items-center">
+      {items.map((item) => (
+        <li key={item.id}>
+          <Link
+            href={item.href as Route}
+            data-section={item.id}
+            aria-current={item.page === pathname ? 'page' : undefined}
+            className="hover:text-primary aria-[current=page]:border-primary aria-[current=page]:text-primary inline-flex h-11 items-center border-b-2 border-transparent px-3 text-sm font-medium whitespace-nowrap transition-colors"
+          >
+            {item.label}
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

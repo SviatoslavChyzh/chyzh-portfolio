@@ -1,33 +1,67 @@
-import { EDUCATION } from '@/app/constants';
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import type { CSSProperties } from 'react';
+import { Award, CalendarDays, GraduationCap, type LucideIcon } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+import PeriodRange from '@/app/_components/PeriodRange';
+import SectionHeading from '@/app/_components/SectionHeading';
+import { sectionTimeline } from '@/app/_components/nav';
+import { EDUCATION, type EducationItem } from '@/app/constants';
+import type { Locale } from '@/app/types';
 
-export default function Education() {
+const KIND_ICONS: Record<EducationItem['kind'], LucideIcon> = {
+  degree: GraduationCap,
+  certificate: Award,
+};
+
+export default async function Education({ locale }: { locale: Locale }) {
+  const t = await getTranslations('education');
+  const tCommon = await getTranslations('common');
+
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-blue-300 to-indigo-200 dark:from-gray-900 dark:to-indigo-900"
       id="education"
-      style={{ '--vt-name': '--education' } as CSSProperties}
+      aria-labelledby="education-heading"
+      className="py-16 sm:py-24"
+      style={sectionTimeline('education')}
     >
-      <div className="container py-20">
-        <h2 className="p-8 text-3xl">🏫 Education</h2>
-        <div className="lg:grid-cols-auto-fit-100 grid gap-4">
-          {EDUCATION.map((job) => (
-            <Card key={job.id} className="hover:bg-secondary mx-8 p-4 py-16 hover:shadow-2xl">
-              <CardHeader>
-                <CardDescription className="text-primary">
-                  🗓️ {job.startDate} - {job.endDate}
-                </CardDescription>
-                <CardTitle>
-                  <div className="flex flex-wrap items-center justify-between gap-4">
-                    <h2>{job.title}</h2>
-                    <span className="text-accent">{job.company}</span>
-                  </div>
-                </CardTitle>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
+      <div className="shell">
+        <SectionHeading id="education-heading" title={t('title')} />
+
+        <ul className="mt-12 grid gap-6 md:grid-cols-2">
+          {EDUCATION.map((item) => {
+            const Icon = KIND_ICONS[item.kind];
+
+            return (
+              <li
+                key={item.id}
+                className="reveal bg-card flex gap-5 rounded-xl border p-6 shadow-sm sm:p-8"
+              >
+                <span
+                  className="bg-secondary text-secondary-foreground flex size-12 shrink-0 items-center justify-center rounded-lg"
+                  aria-hidden="true"
+                >
+                  <Icon className="size-6" />
+                </span>
+                <div className="space-y-2">
+                  <p className="text-muted-foreground text-sm font-medium">{t(item.kind)}</p>
+                  <h3 className="text-lg font-semibold tracking-tight text-balance">
+                    {item.title[locale]}
+                  </h3>
+                  <p className="text-primary font-medium text-pretty">{item.institution[locale]}</p>
+                  <p className="text-muted-foreground flex items-center gap-2 text-sm">
+                    <CalendarDays className="size-4 shrink-0" aria-hidden="true" />
+                    <span>
+                      <PeriodRange
+                        period={item.period}
+                        locale={locale}
+                        presentLabel={tCommon('present')}
+                        toLabel={tCommon('to')}
+                      />
+                    </span>
+                  </p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );

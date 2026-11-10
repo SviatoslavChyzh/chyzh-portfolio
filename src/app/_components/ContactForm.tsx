@@ -1,5 +1,9 @@
 'use client';
 
+import { zodResolver } from '@hookform/resolvers/zod';
+import { CircleAlert, CircleCheck, LoaderCircle, Send } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -13,105 +17,77 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Send } from 'lucide-react';
+import { CONTACT_LIMITS, createContactSchema, type ContactFormValues } from '@/lib/contact';
 
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
-
-const formSchema = z.object({
-  username: z
-    .string()
-    .min(2, {
-      message: 'Username must be at least 2 characters.',
-    })
-    .max(50),
-  subject: z.string().max(50),
-  email: z.string().email('Invalid email address.'),
-  message: z
-    .string()
-    .min(10, {
-      message: 'Message must be at least 10 characters.',
-    })
-    .max(500),
-});
-
-export type ContactFormType = z.infer<typeof formSchema>;
+type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 export default function ContactForm() {
-  const { toast } = useToast();
+  const t = useTranslations('contact.form');
+  const [status, setStatus] = useState<Status>('idle');
+  const isSubmitting = status === 'submitting';
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const schema = useMemo(
+    () =>
+      createContactSchema({
+        nameMin: t('errors.nameMin'),
+        nameMax: t('errors.nameMax'),
+        email: t('errors.email'),
+        subjectMax: t('errors.subjectMax'),
+        messageMin: t('errors.messageMin'),
+        messageMax: t('errors.messageMax'),
+      }),
+    [t],
+  );
 
-  const form = useForm<ContactFormType>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: '',
-      subject: '',
-      email: '',
-      message: '',
-    },
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(schema),
+    defaultValues: { username: '', email: '', subject: '', message: '' },
     mode: 'onTouched',
   });
 
-  async function onSubmit(values: ContactFormType) {
-    setIsSubmitting(true);
-
-    const formData = new FormData();
-    formData.append('username', values.username);
-    formData.append('email', values.email);
-    formData.append('message', values.message);
-    formData.append('subject', values.subject);
-
-    const response = await fetch('/api/send', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: formData.get('username'),
-        email: formData.get('email'),
-        message: formData.get('message'),
-        subject: formData.get('subject'),
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    const data: { error?: string } = await response.json();
-    const { error } = data;
-
-    if (error) {
-      toast({
-        title: 'Error',
-        description: error,
-        variant: 'destructive',
-      });
-      setIsSubmitting(false);
-
+  async function onSubmit(values: ContactFormValues) {
+    if (isSubmitting) {
       return;
     }
 
-    toast({
-      title: 'Success',
-      description: 'Your message has been sent.',
-    });
+    setStatus('submitting');
 
-    setIsSubmitting(false);
-    form.reset();
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      form.reset();
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="flex justify-stretch gap-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} noValidate className="mt-6 space-y-6">
+        <div className="grid gap-6 sm:grid-cols-2">
           <FormField
             control={form.control}
             name="username"
             render={({ field }) => (
-              <FormItem className="w-full">
-                <FormLabel>Username</FormLabel>
+              <FormItem>
+                <FormLabel>{t('name')}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your name" {...field} />
+                  <Input
+                    placeholder={t('namePlaceholder')}
+                    autoComplete="name"
+                    maxLength={CONTACT_LIMITS.nameMax}
+                    required
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -122,10 +98,17 @@ export default function ContactForm() {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem className="w-full">
-                <FormLabel>Email</FormLabel>
+              <FormItem>
+                <FormLabel>{t('email')}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your email" {...field} />
+                  <Input
+                    type="email"
+                    inputMode="email"
+                    placeholder={t('emailPlaceholder')}
+                    autoComplete="email"
+                    required
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -138,9 +121,16 @@ export default function ContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel>
+                {t('subject')}{' '}
+                <span className="text-muted-foreground font-normal">({t('optional')})</span>
+              </FormLabel>
               <FormControl>
-                <Input placeholder="Enter the subject" {...field} />
+                <Input
+                  placeholder={t('subjectPlaceholder')}
+                  maxLength={CONTACT_LIMITS.subjectMax}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -151,20 +141,53 @@ export default function ContactForm() {
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
+            <FormItem hasDescription>
+              <FormLabel>{t('message')}</FormLabel>
               <FormControl>
-                <Textarea placeholder="Enter your message" {...field} />
+                <Textarea
+                  placeholder={t('messagePlaceholder')}
+                  rows={6}
+                  maxLength={CONTACT_LIMITS.messageMax}
+                  required
+                  {...field}
+                />
               </FormControl>
-              <FormDescription>Your message must be at least 10 characters.</FormDescription>
+              <FormDescription>{t('messageHint')}</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <Button type="submit" className="w-full">
-          {isSubmitting ? 'Sending...' : 'Send Message'} <Send />
+        {/* aria-disabled keeps the button focusable while the request is running. */}
+        <Button
+          type="submit"
+          size="lg"
+          className="w-full aria-disabled:cursor-progress aria-disabled:opacity-70"
+          aria-disabled={isSubmitting}
+        >
+          {isSubmitting ? (
+            <LoaderCircle className="motion-safe:animate-spin" aria-hidden="true" />
+          ) : (
+            <Send aria-hidden="true" />
+          )}
+          {isSubmitting ? t('submitting') : t('submit')}
         </Button>
+
+        {/* Always in the DOM so screen readers announce the result when it changes. */}
+        <div role="status" aria-live="polite">
+          {status === 'success' ? (
+            <p className="text-success flex items-start gap-2 text-sm font-medium">
+              <CircleCheck className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+              {t('success')}
+            </p>
+          ) : null}
+          {status === 'error' ? (
+            <p className="text-destructive flex items-start gap-2 text-sm font-medium">
+              <CircleAlert className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+              {t('error')}
+            </p>
+          ) : null}
+        </div>
       </form>
     </Form>
   );

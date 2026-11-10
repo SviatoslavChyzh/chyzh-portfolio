@@ -1,63 +1,74 @@
-import Link from 'next/link';
-import type { Locale } from '@/app/types';
-import NavLinks from '@/app/_components/NavLinks';
-import MobileMenu from '@/app/_components/MobileMenu';
-import ThemeToggle from '@/components/theme-toggle';
-import LocaleSwitcher from '@/app/_components/LocaleSwitcher';
-import { Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
+import LocaleSwitcher from '@/app/_components/LocaleSwitcher';
+import MobileMenu from '@/app/_components/MobileMenu';
+import NavLinks from '@/app/_components/NavLinks';
+import { buildNavItems } from '@/app/_components/nav';
+import { SITE } from '@/app/constants';
+import type { Locale } from '@/app/types';
+import { GithubIcon } from '@/components/icons';
+import ThemeToggle from '@/components/theme-toggle';
+import { Button } from '@/components/ui/button';
+import { Link } from '@/i18n/navigation';
 
-export default async function NavBar({ lang }: { lang: Locale }) {
-  const navigation = await getTranslations('navigation');
-  const t = await getTranslations();
-  const menuItems = [
-    { name: navigation('#intro'), href: '#intro' },
-    { name: navigation('#skills'), href: '#skills' },
-    { name: navigation('#experience'), href: '#experience' },
-    { name: navigation('#education'), href: '#education' },
-    { name: navigation('#contact'), href: '#contact' },
-  ];
+export default async function NavBar({ locale }: { locale: Locale }) {
+  const t = await getTranslations('navigation');
+  const tCommon = await getTranslations('common');
+  const items = buildNavItems(locale, (id) => t(id));
+  const sourceCodeLabel = `${t('sourceCode')} (${tCommon('opensInNewTab')})`;
 
   return (
-    <header className="fixed top-0 z-10 flex h-[7rem] w-full border-b border-white/10 shadow-xl backdrop-blur-lg">
-      <div className="scroll-watcher"></div>
-      <nav className="container flex items-center justify-between px-8 font-semibold">
-        <Link href={`/${lang}`} className="flex items-center gap-4">
+    <header className="bg-background/85 fixed inset-x-0 top-0 z-40 h-(--header-height) border-b backdrop-blur-md">
+      <div className="scroll-watcher" aria-hidden="true" />
+      <div className="shell flex h-full items-center justify-between gap-4">
+        <Link
+          href="/"
+          aria-label={t('home')}
+          className="flex min-h-11 min-w-11 shrink-0 items-center gap-3 rounded-md"
+        >
           <Image
-            width={100}
-            height={100}
             src="/logo.png"
-            alt="SC"
-            className="border-primary rounded-xl border-2"
+            alt=""
+            width={40}
+            height={40}
+            className="border-primary/40 size-10 rounded-lg border object-cover"
           />
-          <span className="hidden text-gray-800 lg:block lg:text-2xl lg:font-bold dark:text-white">
-            Sviatoslav Chyzh
+          <span className="hidden text-base font-semibold tracking-tight sm:inline">
+            {SITE.name}
           </span>
         </Link>
-        <div className="hidden lg:flex">
-          <NavLinks menuItems={menuItems} lang={lang} />
-        </div>
-        <div className="flex gap-4">
-          <div className="flex gap-2">
-            <ThemeToggle />
-            <LocaleSwitcher />
-            <Link
-              href="https://github.com/SviatoslavChyzh/chyzh-portfolio"
+
+        <nav aria-label={t('label')} className="hidden lg:block">
+          <NavLinks items={items} />
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <ThemeToggle label={t('toggleTheme')} />
+          <LocaleSwitcher />
+          <Button asChild variant="outline" size="icon" className="hidden sm:inline-flex">
+            <a
+              href={SITE.repository}
               target="_blank"
               rel="noreferrer"
+              aria-label={sourceCodeLabel}
+              title={t('sourceCode')}
             >
-              <Button variant="outline" size="icon">
-                <Github />
-              </Button>
-            </Link>
-          </div>
-
-          {/*MobileMenu*/}
-          <MobileMenu menuItems={menuItems} lang={lang} menuTitle={t('navigationTitle')} />
+              <GithubIcon />
+            </a>
+          </Button>
+          <MobileMenu
+            items={items}
+            labels={{
+              open: t('openMenu'),
+              close: t('closeMenu'),
+              title: t('menuTitle'),
+              description: t('menuDescription'),
+              sourceCode: t('sourceCode'),
+              newTab: tCommon('opensInNewTab'),
+            }}
+          />
         </div>
-      </nav>
+      </div>
     </header>
   );
 }

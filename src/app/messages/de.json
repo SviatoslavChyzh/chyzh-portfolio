@@ -1,11 +1,127 @@
 {
-  "navigation": {
-    "#intro": "Intro",
-    "#skills": "Skills",
-    "#experience": "Erfahrung",
-    "#education": "Bildung",
-    "#contact": "Kontakt"
+  "metadata": {
+    "title": "Sviatoslav Chyzh | Frontend Software Engineer",
+    "description": "Portfolio von Sviatoslav Chyzh, Frontend Software Engineer mit Schwerpunkt auf TypeScript und React. Projekte und Berufserfahrung im Überblick.",
+    "projectsTitle": "Projekte",
+    "projectsDescription": "Websites und Web-Apps von Sviatoslav Chyzh, umgesetzt mit TanStack Start, Next.js und Convex.",
+    "notFoundTitle": "Seite nicht gefunden"
   },
-  "navigationTitle": "Hauptmenü",
-    "heroSection": "Ansässig in Deutschland. Spezialisiert auf moderne Webanwendungen mit React, TypeScript und Tailwind CSS. Stets lernbereit und fokussiert auf die neuesten Technologien zur kontinuierlichen Weiterentwicklung."
+  "common": {
+    "skipToContent": "Zum Hauptinhalt springen",
+    "opensInNewTab": "öffnet in einem neuen Tab",
+    "present": "heute",
+    "to": "bis"
+  },
+  "navigation": {
+    "label": "Hauptnavigation",
+    "home": "Sviatoslav Chyzh – Startseite",
+    "intro": "Start",
+    "skills": "Skills",
+    "experience": "Erfahrung",
+    "education": "Ausbildung",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "menuTitle": "Hauptmenü",
+    "menuDescription": "Zu einem Bereich der Website springen.",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "toggleTheme": "Zwischen hellem und dunklem Design wechseln",
+    "sourceCode": "Quellcode auf GitHub"
+  },
+  "hero": {
+    "availability": "Offen für neue Projekte",
+    "title": "Hallo, ich bin Sviatoslav Chyzh",
+    "subtitle": "Software Engineer mit Leidenschaft für die Entwicklung von <highlight>Webanwendungen</highlight>",
+    "description": "Ich lebe und arbeite in Deutschland. Meine Schwerpunkte sind React, TypeScript und Tailwind CSS. Ich lerne laufend neue Technologien kennen und entwickle meine Fähigkeiten stetig weiter.",
+    "viewProjects": "Projekte ansehen",
+    "downloadResume": "Lebenslauf herunterladen",
+    "contact": "Kontakt aufnehmen",
+    "avatarAlt": "Porträt von Sviatoslav Chyzh",
+    "socialLabel": "Profile",
+    "github": "GitHub-Profil",
+    "linkedin": "LinkedIn-Profil"
+  },
+  "skills": {
+    "title": "Skills & <highlight>Technologien</highlight>",
+    "description": "Technologien und Werkzeuge, mit denen ich überzeugende Web-Erlebnisse entwickle",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & Methoden"
+    }
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "description": "Stationen und Projekte – die neuesten zuerst.",
+    "current": "Aktuelle Position",
+    "projects": "Projekte",
+    "stack": "Technologien"
+  },
+  "education": {
+    "title": "Ausbildung",
+    "degree": "Abschluss",
+    "certificate": "Zertifikat"
+  },
+  "projects": {
+    "title": "Projekte",
+    "intro": "Websites und Web-Apps, die ich von A bis Z umgesetzt habe – von Kundenwebsites über eine Gemeindeplattform bis zu einem internen Tool für mein Team.",
+    "featuredTitle": "Ausgewählte Projekte",
+    "featuredDescription": "Eine Auswahl meiner jüngsten Arbeiten.",
+    "viewAll": "Alle Projekte ansehen",
+    "details": "Projekt ansehen",
+    "visit": "Website besuchen",
+    "highlights": "Highlights",
+    "stack": "Umgesetzt mit",
+    "screenshotAlt": "Screenshot der Website {name}",
+    "ctaTitle": "Sie haben ein Projekt im Kopf?",
+    "ctaText": "Ich freue mich auf ein Gespräch über Websites, Web-Apps und alles dazwischen.",
+    "ctaButton": "Kontakt aufnehmen"
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "description": "Sie erreichen mich über soziale Netzwerke oder per E-Mail – schreiben Sie mir gern.",
+    "profiles": "Profile",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "logoAlt": "Logo von Sviatoslav Chyzh, Web Software Engineer",
+    "qrAlt": "QR-Code mit meinen Kontaktdaten",
+    "qrCaption": "Scannen Sie den QR-Code, um meine Kontaktdaten zu erhalten.",
+    "formTitle": "Nachricht schreiben",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "email": "E-Mail",
+      "emailPlaceholder": "name@beispiel.de",
+      "subject": "Betreff",
+      "optional": "optional",
+      "subjectPlaceholder": "Worum geht es?",
+      "message": "Nachricht",
+      "messagePlaceholder": "Ihre Nachricht",
+      "messageHint": "Zwischen 10 und 500 Zeichen.",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet …",
+      "success": "Vielen Dank! Ihre Nachricht wurde gesendet – ich melde mich so bald wie möglich bei Ihnen.",
+      "error": "Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut oder schreiben Sie mir auf LinkedIn.",
+      "errors": {
+        "nameMin": "Bitte geben Sie mindestens 2 Zeichen ein.",
+        "nameMax": "Bitte verwenden Sie höchstens 50 Zeichen.",
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "subjectMax": "Bitte verwenden Sie höchstens 50 Zeichen.",
+        "messageMin": "Ihre Nachricht muss mindestens 10 Zeichen lang sein.",
+        "messageMax": "Ihre Nachricht darf höchstens 500 Zeichen lang sein."
+      }
+    }
+  },
+  "footer": {
+    "label": "Fußzeile",
+    "copyright": "© {year} Sviatoslav Chyzh",
+    "builtWith": "Erstellt mit Next.js, Tailwind CSS und next-intl.",
+    "sourceCode": "Quellcode",
+    "backToTop": "Nach oben"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "backHome": "Zurück zur Startseite"
+  }
 }

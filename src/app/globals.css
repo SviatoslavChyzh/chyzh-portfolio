@@ -1,322 +1,301 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  timeline-scope: --intro, --skills, --experience, --education, --contact;
-}
-
-html {
-  scrollbar-color: var(--primary) var(--accent);
-  scroll-behavior: smooth;
-}
-
+/*
+ * Design tokens. Every text/background pair used on the site meets WCAG AA
+ * (4.5:1 for text, 3:1 for control borders and focus rings) in both themes.
+ */
 :root {
-    --background: oklch(1.0000 0 0);
-    --foreground: oklch(0.3588 0.1354 278.6973);
-    --card: oklch(1.0000 0 0);
-    --card-foreground: oklch(0.3588 0.1354 278.6973);
-    --popover: oklch(1.0000 0 0);
-    --popover-foreground: oklch(0.3588 0.1354 278.6973);
-    --primary: oklch(0.6056 0.2189 292.7172);
-    --primary-foreground: oklch(1.0000 0 0);
-    --secondary: oklch(0.9618 0.0202 295.1913);
-    --secondary-foreground: oklch(0.4568 0.2146 277.0229);
-    --muted: oklch(0.9691 0.0161 293.7558);
-    --muted-foreground: oklch(0.5413 0.2466 293.0090);
-    --accent: oklch(0.9319 0.0316 255.5855);
-    --accent-foreground: oklch(0.4244 0.1809 265.6377);
-    --destructive: oklch(0.6368 0.2078 25.3313);
-    --destructive-foreground: oklch(1.0000 0 0);
-    --border: oklch(0.9299 0.0334 272.7879);
-    --input: oklch(0.9299 0.0334 272.7879);
-    --ring: oklch(0.6056 0.2189 292.7172);
-    --chart-1: oklch(0.6056 0.2189 292.7172);
-    --chart-2: oklch(0.5413 0.2466 293.0090);
-    --chart-3: oklch(0.4907 0.2412 292.5809);
-    --chart-4: oklch(0.4320 0.2106 292.7591);
-    --chart-5: oklch(0.3796 0.1783 293.7446);
-    --sidebar: oklch(0.9691 0.0161 293.7558);
-    --sidebar-foreground: oklch(0.3588 0.1354 278.6973);
-    --sidebar-primary: oklch(0.6056 0.2189 292.7172);
-    --sidebar-primary-foreground: oklch(1.0000 0 0);
-    --sidebar-accent: oklch(0.9319 0.0316 255.5855);
-    --sidebar-accent-foreground: oklch(0.4244 0.1809 265.6377);
-    --sidebar-border: oklch(0.9299 0.0334 272.7879);
-    --sidebar-ring: oklch(0.6056 0.2189 292.7172);
-    --font-sans: Roboto, sans-serif;
-    --font-serif: Playfair Display, serif;
-    --font-mono: Fira Code, monospace;
-    --radius: 0.625rem;
-    --shadow-x: 2px;
-    --shadow-y: 2px;
-    --shadow-blur: 4px;
-    --shadow-spread: 0px;
-    --shadow-opacity: 0.2;
-    --shadow-color: hsl(255 86% 66%);
-    --shadow-2xs: 2px 2px 4px 0px hsl(255 86% 66% / 0.10);
-    --shadow-xs: 2px 2px 4px 0px hsl(255 86% 66% / 0.10);
-    --shadow-sm: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 1px 2px -1px hsl(255 86% 66% / 0.20);
-    --shadow: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 1px 2px -1px hsl(255 86% 66% / 0.20);
-    --shadow-md: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 2px 4px -1px hsl(255 86% 66% / 0.20);
-    --shadow-lg: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 4px 6px -1px hsl(255 86% 66% / 0.20);
-    --shadow-xl: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 8px 10px -1px hsl(255 86% 66% / 0.20);
-    --shadow-2xl: 2px 2px 4px 0px hsl(255 86% 66% / 0.50);
-    --tracking-normal: 0em;
-    --spacing: 0.25rem;
+  color-scheme: light;
+
+  --background: oklch(0.985 0.006 290);
+  --foreground: oklch(0.26 0.085 281);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.085 281);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.085 281);
+  --primary: oklch(0.541 0.281 293.009);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.955 0.024 293);
+  --secondary-foreground: oklch(0.4 0.19 290);
+  --muted: oklch(0.962 0.014 290);
+  --muted-foreground: oklch(0.47 0.06 281);
+  --accent: oklch(0.935 0.04 292);
+  --accent-foreground: oklch(0.33 0.15 285);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --success: oklch(0.5 0.13 155);
+  /* `border` is decorative (cards, separators); `input` outlines controls and needs 3:1. */
+  --border: oklch(0.905 0.03 285);
+  --input: oklch(0.6 0.06 285);
+  --ring: oklch(0.541 0.281 293.009);
+
+  --shadow-rgb: 76 29 149;
+  --radius: 0.75rem;
+  --header-height: 4rem;
 }
 
 .dark {
-    --background: oklch(0.2077 0.0398 265.7549);
-    --foreground: oklch(0.9299 0.0334 272.7879);
-    --card: oklch(0.2573 0.0861 281.2883);
-    --card-foreground: oklch(0.9299 0.0334 272.7879);
-    --popover: oklch(0.2573 0.0861 281.2883);
-    --popover-foreground: oklch(0.9299 0.0334 272.7879);
-    --primary: oklch(0.6056 0.2189 292.7172);
-    --primary-foreground: oklch(1.0000 0 0);
-    --secondary: oklch(0.2573 0.0861 281.2883);
-    --secondary-foreground: oklch(0.9299 0.0334 272.7879);
-    --muted: oklch(0.2329 0.0919 279.1398);
-    --muted-foreground: oklch(0.8112 0.1013 293.5712);
-    --accent: oklch(0.4568 0.2146 277.0229);
-    --accent-foreground: oklch(0.9299 0.0334 272.7879);
-    --destructive: oklch(0.6368 0.2078 25.3313);
-    --destructive-foreground: oklch(1.0000 0 0);
-    --border: oklch(0.2827 0.1351 291.0894);
-    --input: oklch(0.2827 0.1351 291.0894);
-    --ring: oklch(0.6056 0.2189 292.7172);
-    --chart-1: oklch(0.7090 0.1592 293.5412);
-    --chart-2: oklch(0.6056 0.2189 292.7172);
-    --chart-3: oklch(0.5413 0.2466 293.0090);
-    --chart-4: oklch(0.4907 0.2412 292.5809);
-    --chart-5: oklch(0.4320 0.2106 292.7591);
-    --sidebar: oklch(0.2077 0.0398 265.7549);
-    --sidebar-foreground: oklch(0.9299 0.0334 272.7879);
-    --sidebar-primary: oklch(0.6056 0.2189 292.7172);
-    --sidebar-primary-foreground: oklch(1.0000 0 0);
-    --sidebar-accent: oklch(0.4568 0.2146 277.0229);
-    --sidebar-accent-foreground: oklch(0.9299 0.0334 272.7879);
-    --sidebar-border: oklch(0.2827 0.1351 291.0894);
-    --sidebar-ring: oklch(0.6056 0.2189 292.7172);
-    --font-sans: Roboto, sans-serif;
-    --font-serif: Playfair Display, serif;
-    --font-mono: Fira Code, monospace;
-    --radius: 0.625rem;
-    --shadow-x: 2px;
-    --shadow-y: 2px;
-    --shadow-blur: 4px;
-    --shadow-spread: 0px;
-    --shadow-opacity: 0.2;
-    --shadow-color: hsl(255 86% 66%);
-    --shadow-2xs: 2px 2px 4px 0px hsl(255 86% 66% / 0.10);
-    --shadow-xs: 2px 2px 4px 0px hsl(255 86% 66% / 0.10);
-    --shadow-sm: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 1px 2px -1px hsl(255 86% 66% / 0.20);
-    --shadow: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 1px 2px -1px hsl(255 86% 66% / 0.20);
-    --shadow-md: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 2px 4px -1px hsl(255 86% 66% / 0.20);
-    --shadow-lg: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 4px 6px -1px hsl(255 86% 66% / 0.20);
-    --shadow-xl: 2px 2px 4px 0px hsl(255 86% 66% / 0.20), 2px 8px 10px -1px hsl(255 86% 66% / 0.20);
-    --shadow-2xl: 2px 2px 4px 0px hsl(255 86% 66% / 0.50);
+  color-scheme: dark;
+
+  --background: oklch(0.185 0.035 275);
+  --foreground: oklch(0.94 0.02 280);
+  --card: oklch(0.235 0.05 280);
+  --card-foreground: oklch(0.94 0.02 280);
+  --popover: oklch(0.235 0.05 280);
+  --popover-foreground: oklch(0.94 0.02 280);
+  --primary: oklch(0.702 0.183 293.541);
+  --primary-foreground: oklch(0.2 0.07 285);
+  --secondary: oklch(0.3 0.07 283);
+  --secondary-foreground: oklch(0.94 0.02 280);
+  --muted: oklch(0.26 0.05 280);
+  --muted-foreground: oklch(0.77 0.055 285);
+  --accent: oklch(0.33 0.09 286);
+  --accent-foreground: oklch(0.95 0.02 280);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.2 0.05 20);
+  --success: oklch(0.78 0.15 155);
+  --border: oklch(0.34 0.06 282);
+  --input: oklch(0.58 0.07 285);
+  --ring: oklch(0.702 0.183 293.541);
+
+  --shadow-rgb: 0 0 0;
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-destructive-foreground: var(--destructive-foreground);
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
-    --color-chart-1: var(--chart-1);
-    --color-chart-2: var(--chart-2);
-    --color-chart-3: var(--chart-3);
-    --color-chart-4: var(--chart-4);
-    --color-chart-5: var(--chart-5);
-    --color-sidebar: var(--sidebar);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-ring: var(--sidebar-ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
-    --font-sans: var(--font-sans);
-    --font-mono: var(--font-mono);
-    --font-serif: var(--font-serif);
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --radius-sm: calc(var(--radius) - 4px);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 
-    --shadow-2xs: var(--shadow-2xs);
-    --shadow-xs: var(--shadow-xs);
-    --shadow-sm: var(--shadow-sm);
-    --shadow: var(--shadow);
-    --shadow-md: var(--shadow-md);
-    --shadow-lg: var(--shadow-lg);
-    --shadow-xl: var(--shadow-xl);
-    --shadow-2xl: var(--shadow-2xl);
+  --shadow-xs: 0 1px 2px 0 rgb(var(--shadow-rgb) / 0.05);
+  --shadow-sm:
+    0 1px 3px 0 rgb(var(--shadow-rgb) / 0.08), 0 1px 2px -1px rgb(var(--shadow-rgb) / 0.08);
+  --shadow-md:
+    0 6px 16px -4px rgb(var(--shadow-rgb) / 0.12), 0 2px 6px -2px rgb(var(--shadow-rgb) / 0.08);
+  --shadow-lg:
+    0 16px 32px -12px rgb(var(--shadow-rgb) / 0.2), 0 4px 10px -4px rgb(var(--shadow-rgb) / 0.1);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
+
+  html {
+    /* Keeps anchor targets clear of the fixed header. */
+    scroll-padding-top: calc(var(--header-height) + 1.5rem);
+    scrollbar-color: var(--primary) var(--accent);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
+    /* Lets the header links observe the view timelines of the page sections. */
+    timeline-scope: --intro, --skills, --experience, --education, --projects, --contact;
+  }
+
+  /* One consistent, high-contrast focus indicator for everything focusable. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 30%, transparent);
   }
 }
 
-.scroll-watcher {
-  height: 5px;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--primary);
+/* Honour "reduce motion": no transitions, no one-shot animations, no smooth scrolling. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Page gutter + max width shared by header, sections and footer. */
+@utility shell {
+  margin-inline: auto;
   width: 100%;
-  scale: 0 1;
+  max-width: 72rem;
+  padding-inline: 1rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Scroll-driven enhancements                                                */
+/*  All of these are progressive: without support (or with reduced motion)    */
+/*  the content is simply shown in its final state.                           */
+/* -------------------------------------------------------------------------- */
+
+/* Reading progress bar at the top edge of the header. */
+.scroll-watcher {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 3px;
+  background-color: var(--primary);
   transform-origin: left;
-  animation: scroll-watcher linear;
-  animation-timeline: scroll();
+  scale: 0 1;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-watcher {
+    animation: scroll-watcher linear both;
+    animation-timeline: scroll(root);
+  }
 }
 
 @keyframes scroll-watcher {
-  to { scale: 1 1; }
-}
-
-.header-image {
-  grid-column: 1 / -1;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.20;
-  object-fit: cover;
-  overflow: hidden;
-  z-index: -1;
-}
-
-@supports (animation-timeline: view()) {
-  .header-image {
-    animation: header-image-animation linear forwards;
-    animation-timeline: view();
-    animation-range: exit;
+  to {
+    scale: 1 1;
   }
 }
 
-@keyframes header-image-animation {
-  25% { opacity: 0.55; }
-  85%, 100% { opacity: 0.1; scale: 3 }
-}
-
-.locale-switcher button svg {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
+/* Each page section exposes a named view timeline (set inline via --vt-name)… */
 section {
   view-timeline-name: var(--vt-name);
 }
 
-.top-navigation {
-  display: flex;
-  gap: 1.5rem;
-
-  > a {
-    animation: highlight linear both;
+/* …and the matching header link lights up while that section is on screen. */
+@supports (animation-timeline: view()) {
+  .top-navigation a[data-section] {
+    animation: nav-highlight linear both;
     animation-range: cover 20% exit-crossing 50%;
-
-    border-block-end: 3px solid transparent;
   }
-  > a:nth-child(1) { animation-timeline: --intro }
-  > a:nth-child(2) { animation-timeline: --skills }
-  > a:nth-child(3) { animation-timeline: --experience }
-  > a:nth-child(4) { animation-timeline: --education }
-  > a:nth-child(5) { animation-timeline: --contact }
 
-  > a:hover {
-    border-block-end: 3px solid var(--accent);
-    color: var(--primary);
+  .top-navigation a[data-section='intro'] {
+    animation-timeline: --intro;
+  }
+  .top-navigation a[data-section='skills'] {
+    animation-timeline: --skills;
+  }
+  .top-navigation a[data-section='experience'] {
+    animation-timeline: --experience;
+  }
+  .top-navigation a[data-section='education'] {
+    animation-timeline: --education;
+  }
+  .top-navigation a[data-section='projects'] {
+    animation-timeline: --projects;
+  }
+  .top-navigation a[data-section='contact'] {
+    animation-timeline: --contact;
   }
 }
 
-@keyframes highlight {
-  25%, 50% {
+@keyframes nav-highlight {
+  25%,
+  50% {
     border-block-end-color: var(--primary);
     color: var(--primary);
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:grid-cols-auto-fit-100 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+/* Skyline behind the hero: desaturated, faded towards the text and the next section. */
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.16;
+  filter: grayscale(1);
+  mask-image:
+    linear-gradient(to right, transparent 20%, black 80%),
+    linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.dark .hero-backdrop {
+  opacity: 0.2;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .hero-backdrop {
+      animation: hero-backdrop linear both;
+      animation-timeline: view();
+      animation-range: exit;
+    }
+
+    /* Cards fade up as they scroll into view. */
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 18%;
+    }
+
+    /* Skill meters fill up as they scroll into view. */
+    .skill-bar {
+      transform-origin: left center;
+      animation: skill-bar linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 28%;
+    }
   }
 }
 
-@utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-  max-width: 90rem;
+@keyframes hero-backdrop {
+  to {
+    scale: 1.15;
+    opacity: 0.04;
+  }
 }
 
-.gradient-primary {
-    background: var(--primary);
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 1.5rem;
+  }
 }
 
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-
-.animate-slide-up {
-    animation: slideUp 0.8s ease-out;
-}
-
-.animate-pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes pulseGlow {
-    0%, 100% {
-        box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-    }
-    50% {
-        box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
-    }
+@keyframes skill-bar {
+  from {
+    scale: 0 1;
+  }
 }

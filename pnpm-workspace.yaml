@@ -1,0 +1,13 @@
+# This is a single-package project. The entry below only exists because pnpm 9
+# (which Vercel may select for this lockfile version) rejects a workspace file
+# without a `packages` field; pnpm 10+ reads the settings underneath.
+packages:
+  - '.'
+
+# Dependencies that are allowed to run install scripts (required since pnpm 11).
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  '@tailwindcss/oxide': true
+  sharp: true
+  unrs-resolver: true

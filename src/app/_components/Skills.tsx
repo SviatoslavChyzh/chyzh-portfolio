@@ -1,107 +1,78 @@
-'use client';
+import { MonitorSmartphone, Server, Wrench, type LucideIcon } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+import SectionHeading from '@/app/_components/SectionHeading';
+import { sectionTimeline } from '@/app/_components/nav';
+import { SKILL_GROUPS, type SkillGroupId } from '@/app/constants';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import type { CSSProperties } from 'react';
-import SkillBar from '@/components/skill-bar';
-import { useIsMobile } from '@/hooks/use-mobile';
-
-const skillCategories = {
-  frontend: {
-    skills: [
-      { name: 'React', level: 95, color: 'from-blue-500 to-cyan-500' },
-      { name: 'TypeScript', level: 90, color: 'from-blue-600 to-blue-400' },
-      { name: 'Next.js', level: 85, color: 'from-gray-700 to-gray-500' },
-      { name: 'JavaScript', level: 92, color: 'from-yellow-500 to-yellow-300' },
-      { name: 'HTML', level: 98, color: 'from-orange-600 to-orange-400' },
-      { name: 'CSS', level: 88, color: 'from-blue-500 to-blue-300' },
-      { name: 'Tailwind CSS', level: 95, color: 'from-teal-500 to-teal-300' },
-    ],
-  },
-  backend: {
-    skills: [
-      { name: 'Node.js', level: 80, color: 'from-green-600 to-green-400' },
-      { name: 'Express.js', level: 75, color: 'from-gray-600 to-gray-400' },
-      { name: 'PostgreSQL', level: 70, color: 'from-blue-700 to-blue-500' },
-      { name: 'REST APIs', level: 85, color: 'from-purple-600 to-purple-400' },
-    ],
-  },
-  tools: {
-    skills: [
-      { name: 'Git', level: 90, color: 'from-orange-600 to-red-500' },
-      { name: 'Docker', level: 70, color: 'from-blue-600 to-blue-400' },
-      { name: 'Testing', level: 80, color: 'from-green-600 to-green-400' },
-      { name: 'Agile', level: 85, color: 'from-purple-600 to-purple-400' },
-    ],
-  },
+const GROUP_ICONS: Record<SkillGroupId, LucideIcon> = {
+  frontend: MonitorSmartphone,
+  backend: Server,
+  tools: Wrench,
 };
 
-export default function Skills() {
+/**
+ * All three groups are visible at once (no tabs to click through). The level is
+ * always available as text; the bar is a decorative repetition of that number.
+ */
+export default async function Skills() {
+  const t = await getTranslations('skills');
+
   return (
     <section
       id="skills"
-      className="relative grid items-center overflow-x-clip"
-      style={{ '--vt-name': '--skills' } as CSSProperties}
+      aria-labelledby="skills-heading"
+      className="py-16 sm:py-24"
+      style={sectionTimeline('skills')}
     >
-      <div className="container my-24">
-        <Card>
-          <CardHeader>
-            <CardTitle className="mb-6 text-center text-4xl font-bold md:text-5xl">
-              Skills & <span className="text-primary">Technologies</span>
-            </CardTitle>
-            <CardDescription className="text-muted-foreground text-center text-lg">
-              Technologies and tools I work with to create amazing web experiences
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Tabs defaultValue="frontend" className="flex w-full flex-col items-center gap-8">
-              <TabsList className="mb-4 flex h-fit flex-wrap justify-center gap-4">
-                <TabsTrigger className="px-8 text-xl hover:cursor-pointer" value="frontend">
-                  🎨 Frontend
-                </TabsTrigger>
-                <TabsTrigger className="px-8 text-xl hover:cursor-pointer" value="backend">
-                  ⚙️ Backend
-                </TabsTrigger>
-                <TabsTrigger className="px-8 text-xl hover:cursor-pointer" value="tools">
-                  🛠 Tools & Practices
-                </TabsTrigger>
-              </TabsList>
-              <TabsContent value="frontend" className="w-2/3 space-y-4 md:m-6">
-                <Card className="p-8">
-                  <div className="grid gap-8 md:grid-cols-2">
-                    {skillCategories['frontend'].skills.map((skill, index) => (
-                      <div key={skill.name} className="animate-slide-up">
-                        <SkillBar skill={skill} index={index} />
+      <div className="shell">
+        <SectionHeading
+          id="skills-heading"
+          title={t.rich('title', {
+            highlight: (chunks) => <span className="text-primary">{chunks}</span>,
+          })}
+          description={t('description')}
+        />
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {SKILL_GROUPS.map((group) => {
+            const Icon = GROUP_ICONS[group.id];
+            const headingId = `skills-${group.id}`;
+
+            return (
+              <div key={group.id} className="reveal bg-card rounded-xl border p-6 shadow-sm">
+                <h3 id={headingId} className="flex items-center gap-3 text-lg font-semibold">
+                  <span
+                    className="bg-secondary text-secondary-foreground flex size-10 items-center justify-center rounded-lg"
+                    aria-hidden="true"
+                  >
+                    <Icon className="size-5" />
+                  </span>
+                  {t(`groups.${group.id}`)}
+                </h3>
+
+                <ul aria-labelledby={headingId} className="mt-6 space-y-5">
+                  {group.skills.map((skill) => (
+                    <li key={skill.name}>
+                      <div className="flex items-baseline justify-between gap-4 text-sm">
+                        <span className="font-medium">{skill.name}</span>
+                        <span className="text-muted-foreground tabular-nums">{skill.level}%</span>
                       </div>
-                    ))}
-                  </div>
-                </Card>
-              </TabsContent>
-              <TabsContent value="backend" className="w-2/3 space-y-4 md:m-6">
-                <Card className="p-8">
-                  <div className="grid gap-8 md:grid-cols-2">
-                    {skillCategories['backend'].skills.map((skill, index) => (
-                      <div key={skill.name} className="animate-slide-up">
-                        <SkillBar skill={skill} index={index} />
+                      <div
+                        className="bg-muted mt-2 h-2 overflow-hidden rounded-full"
+                        aria-hidden="true"
+                      >
+                        <div
+                          className="skill-bar bg-primary h-full rounded-full"
+                          style={{ width: `${skill.level}%` }}
+                        />
                       </div>
-                    ))}
-                  </div>
-                </Card>
-              </TabsContent>
-              <TabsContent value="tools" className="w-2/3 space-y-4 md:m-6">
-                <Card className="p-8">
-                  <div className="grid gap-8 md:grid-cols-2">
-                    {skillCategories['tools'].skills.map((skill, index) => (
-                      <div key={skill.name} className="animate-slide-up">
-                        <SkillBar skill={skill} index={index} />
-                      </div>
-                    ))}
-                  </div>
-                </Card>
-              </TabsContent>
-            </Tabs>
-          </CardContent>
-        </Card>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
